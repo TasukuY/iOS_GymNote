@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B15282B0A34008B5DF4 /* AppDelegate.swift */; };
+		C9343B18282B0A34008B5DF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */; };
+		C9343B1A282B0A34008B5DF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B19282B0A34008B5DF4 /* ViewController.swift */; };
+		C9343B1D282B0A34008B5DF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B1B282B0A34008B5DF4 /* Main.storyboard */; };
+		C9343B1F282B0A34008B5DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9343B1E282B0A34008B5DF4 /* Assets.xcassets */; };
+		C9343B22282B0A34008B5DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B20282B0A34008B5DF4 /* LaunchScreen.storyboard */; };
+		C9343B27282B0A34008B5DF4 /* GymNote WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C9343B26282B0A34008B5DF4 /* GymNote WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9343B2D282B0A34008B5DF4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B2B282B0A34008B5DF4 /* Interface.storyboard */; };
+		C9343B2F282B0A35008B5DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9343B2E282B0A35008B5DF4 /* Assets.xcassets */; };
+		C9343B35282B0A35008B5DF4 /* GymNote WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C9343B34282B0A35008B5DF4 /* GymNote WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9343B3A282B0A35008B5DF4 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B39282B0A35008B5DF4 /* InterfaceController.swift */; };
+		C9343B3C282B0A35008B5DF4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3B282B0A35008B5DF4 /* ExtensionDelegate.swift */; };
+		C9343B3E282B0A35008B5DF4 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3D282B0A35008B5DF4 /* NotificationController.swift */; };
+		C9343B40282B0A35008B5DF4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3F282B0A35008B5DF4 /* ComplicationController.swift */; };
+		C9343B42282B0A36008B5DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9343B41282B0A36008B5DF4 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9343B28282B0A34008B5DF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9343B0A282B0A33008B5DF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9343B25282B0A34008B5DF4;
+			remoteInfo = "GymNote WatchKit App";
+		};
+		C9343B36282B0A35008B5DF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9343B0A282B0A33008B5DF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9343B33282B0A35008B5DF4;
+			remoteInfo = "GymNote WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9343B4A282B0A36008B5DF4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C9343B35282B0A35008B5DF4 /* GymNote WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9343B4E282B0A36008B5DF4 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C9343B27282B0A34008B5DF4 /* GymNote WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C9343B12282B0A33008B5DF4 /* GymNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9343B15282B0A34008B5DF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C9343B19282B0A34008B5DF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9343B1C282B0A34008B5DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9343B1E282B0A34008B5DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9343B21282B0A34008B5DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9343B23282B0A34008B5DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9343B26282B0A34008B5DF4 /* GymNote WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymNote WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9343B2C282B0A34008B5DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C9343B2E282B0A35008B5DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9343B34282B0A35008B5DF4 /* GymNote WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GymNote WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9343B39282B0A35008B5DF4 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C9343B3B282B0A35008B5DF4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C9343B3D282B0A35008B5DF4 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C9343B3F282B0A35008B5DF4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		C9343B41282B0A36008B5DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9343B43282B0A36008B5DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9343B44282B0A36008B5DF4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9343B0F282B0A33008B5DF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9343B31282B0A35008B5DF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9343B09282B0A33008B5DF4 = {
+			isa = PBXGroup;
+			children = (
+				C9343B14282B0A33008B5DF4 /* GymNote */,
+				C9343B2A282B0A34008B5DF4 /* GymNote WatchKit App */,
+				C9343B38282B0A35008B5DF4 /* GymNote WatchKit Extension */,
+				C9343B13282B0A33008B5DF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9343B13282B0A33008B5DF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B12282B0A33008B5DF4 /* GymNote.app */,
+				C9343B26282B0A34008B5DF4 /* GymNote WatchKit App.app */,
+				C9343B34282B0A35008B5DF4 /* GymNote WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9343B14282B0A33008B5DF4 /* GymNote */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B15282B0A34008B5DF4 /* AppDelegate.swift */,
+				C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */,
+				C9343B19282B0A34008B5DF4 /* ViewController.swift */,
+				C9343B1B282B0A34008B5DF4 /* Main.storyboard */,
+				C9343B1E282B0A34008B5DF4 /* Assets.xcassets */,
+				C9343B20282B0A34008B5DF4 /* LaunchScreen.storyboard */,
+				C9343B23282B0A34008B5DF4 /* Info.plist */,
+			);
+			path = GymNote;
+			sourceTree = "<group>";
+		};
+		C9343B2A282B0A34008B5DF4 /* GymNote WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B2B282B0A34008B5DF4 /* Interface.storyboard */,
+				C9343B2E282B0A35008B5DF4 /* Assets.xcassets */,
+			);
+			path = "GymNote WatchKit App";
+			sourceTree = "<group>";
+		};
+		C9343B38282B0A35008B5DF4 /* GymNote WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B39282B0A35008B5DF4 /* InterfaceController.swift */,
+				C9343B3B282B0A35008B5DF4 /* ExtensionDelegate.swift */,
+				C9343B3D282B0A35008B5DF4 /* NotificationController.swift */,
+				C9343B3F282B0A35008B5DF4 /* ComplicationController.swift */,
+				C9343B41282B0A36008B5DF4 /* Assets.xcassets */,
+				C9343B43282B0A36008B5DF4 /* Info.plist */,
+				C9343B44282B0A36008B5DF4 /* PushNotificationPayload.apns */,
+			);
+			path = "GymNote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9343B11282B0A33008B5DF4 /* GymNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9343B4F282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote" */;
+			buildPhases = (
+				C9343B0E282B0A33008B5DF4 /* Sources */,
+				C9343B0F282B0A33008B5DF4 /* Frameworks */,
+				C9343B10282B0A33008B5DF4 /* Resources */,
+				C9343B4E282B0A36008B5DF4 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9343B29282B0A34008B5DF4 /* PBXTargetDependency */,
+			);
+			name = GymNote;
+			productName = GymNote;
+			productReference = C9343B12282B0A33008B5DF4 /* GymNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9343B25282B0A34008B5DF4 /* GymNote WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9343B4B282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote WatchKit App" */;
+			buildPhases = (
+				C9343B24282B0A34008B5DF4 /* Resources */,
+				C9343B4A282B0A36008B5DF4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9343B37282B0A35008B5DF4 /* PBXTargetDependency */,
+			);
+			name = "GymNote WatchKit App";
+			productName = "GymNote WatchKit App";
+			productReference = C9343B26282B0A34008B5DF4 /* GymNote WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C9343B33282B0A35008B5DF4 /* GymNote WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9343B47282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote WatchKit Extension" */;
+			buildPhases = (
+				C9343B30282B0A35008B5DF4 /* Sources */,
+				C9343B31282B0A35008B5DF4 /* Frameworks */,
+				C9343B32282B0A35008B5DF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GymNote WatchKit Extension";
+			productName = "GymNote WatchKit Extension";
+			productReference = C9343B34282B0A35008B5DF4 /* GymNote WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9343B0A282B0A33008B5DF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					C9343B11282B0A33008B5DF4 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					C9343B25282B0A34008B5DF4 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					C9343B33282B0A35008B5DF4 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = C9343B0D282B0A33008B5DF4 /* Build configuration list for PBXProject "GymNote" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9343B09282B0A33008B5DF4;
+			productRefGroup = C9343B13282B0A33008B5DF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9343B11282B0A33008B5DF4 /* GymNote */,
+				C9343B25282B0A34008B5DF4 /* GymNote WatchKit App */,
+				C9343B33282B0A35008B5DF4 /* GymNote WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9343B10282B0A33008B5DF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9343B22282B0A34008B5DF4 /* LaunchScreen.storyboard in Resources */,
+				C9343B1F282B0A34008B5DF4 /* Assets.xcassets in Resources */,
+				C9343B1D282B0A34008B5DF4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9343B24282B0A34008B5DF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9343B2F282B0A35008B5DF4 /* Assets.xcassets in Resources */,
+				C9343B2D282B0A34008B5DF4 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9343B32282B0A35008B5DF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9343B42282B0A36008B5DF4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9343B0E282B0A33008B5DF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9343B1A282B0A34008B5DF4 /* ViewController.swift in Sources */,
+				C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */,
+				C9343B18282B0A34008B5DF4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9343B30282B0A35008B5DF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9343B3E282B0A35008B5DF4 /* NotificationController.swift in Sources */,
+				C9343B40282B0A35008B5DF4 /* ComplicationController.swift in Sources */,
+				C9343B3C282B0A35008B5DF4 /* ExtensionDelegate.swift in Sources */,
+				C9343B3A282B0A35008B5DF4 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9343B29282B0A34008B5DF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9343B25282B0A34008B5DF4 /* GymNote WatchKit App */;
+			targetProxy = C9343B28282B0A34008B5DF4 /* PBXContainerItemProxy */;
+		};
+		C9343B37282B0A35008B5DF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9343B33282B0A35008B5DF4 /* GymNote WatchKit Extension */;
+			targetProxy = C9343B36282B0A35008B5DF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9343B1B282B0A34008B5DF4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9343B1C282B0A34008B5DF4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9343B20282B0A34008B5DF4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9343B21282B0A34008B5DF4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C9343B2B282B0A34008B5DF4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9343B2C282B0A34008B5DF4 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9343B45282B0A36008B5DF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9343B46282B0A36008B5DF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C9343B48282B0A36008B5DF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALTGSDSZNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GymNote WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GymNote WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasukuYamamoto.GymNote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		C9343B49282B0A36008B5DF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALTGSDSZNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GymNote WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GymNote WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasukuYamamoto.GymNote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		C9343B4C282B0A36008B5DF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALTGSDSZNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = GymNote_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "GymNote WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.tasukuYamamoto.GymNote;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasukuYamamoto.GymNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		C9343B4D282B0A36008B5DF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALTGSDSZNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = GymNote_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "GymNote WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.tasukuYamamoto.GymNote;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasukuYamamoto.GymNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		C9343B50282B0A36008B5DF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALTGSDSZNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GymNote/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasukuYamamoto.GymNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9343B51282B0A36008B5DF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALTGSDSZNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GymNote/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasukuYamamoto.GymNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9343B0D282B0A33008B5DF4 /* Build configuration list for PBXProject "GymNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9343B45282B0A36008B5DF4 /* Debug */,
+				C9343B46282B0A36008B5DF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9343B47282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9343B48282B0A36008B5DF4 /* Debug */,
+				C9343B49282B0A36008B5DF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9343B4B282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9343B4C282B0A36008B5DF4 /* Debug */,
+				C9343B4D282B0A36008B5DF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9343B4F282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9343B50282B0A36008B5DF4 /* Debug */,
+				C9343B51282B0A36008B5DF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9343B0A282B0A33008B5DF4 /* Project object */;
+}
