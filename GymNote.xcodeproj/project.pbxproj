@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B15282B0A34008B5DF4 /* AppDelegate.swift */; };
 		C9343B18282B0A34008B5DF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */; };
-		C9343B1A282B0A34008B5DF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B19282B0A34008B5DF4 /* ViewController.swift */; };
 		C9343B1D282B0A34008B5DF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B1B282B0A34008B5DF4 /* Main.storyboard */; };
 		C9343B1F282B0A34008B5DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9343B1E282B0A34008B5DF4 /* Assets.xcassets */; };
 		C9343B22282B0A34008B5DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B20282B0A34008B5DF4 /* LaunchScreen.storyboard */; };
@@ -70,7 +69,6 @@
 		C9343B12282B0A33008B5DF4 /* GymNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9343B15282B0A34008B5DF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9343B19282B0A34008B5DF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C9343B1C282B0A34008B5DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9343B1E282B0A34008B5DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9343B21282B0A34008B5DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -129,13 +127,12 @@
 		C9343B14282B0A33008B5DF4 /* GymNote */ = {
 			isa = PBXGroup;
 			children = (
-				C9343B15282B0A34008B5DF4 /* AppDelegate.swift */,
-				C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */,
-				C9343B19282B0A34008B5DF4 /* ViewController.swift */,
-				C9343B1B282B0A34008B5DF4 /* Main.storyboard */,
-				C9343B1E282B0A34008B5DF4 /* Assets.xcassets */,
-				C9343B20282B0A34008B5DF4 /* LaunchScreen.storyboard */,
-				C9343B23282B0A34008B5DF4 /* Info.plist */,
+				C9343B56282B0ABC008B5DF4 /* Models */,
+				C9343B55282B0AB8008B5DF4 /* Controllers */,
+				C9343B54282B0A9E008B5DF4 /* Views */,
+				C9343B57282B0AC0008B5DF4 /* Extensions */,
+				C9343B58282B0AC4008B5DF4 /* Helpers */,
+				C9343B52282B0A45008B5DF4 /* Resources */,
 			);
 			path = GymNote;
 			sourceTree = "<group>";
@@ -161,6 +158,62 @@
 				C9343B44282B0A36008B5DF4 /* PushNotificationPayload.apns */,
 			);
 			path = "GymNote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		C9343B52282B0A45008B5DF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B15282B0A34008B5DF4 /* AppDelegate.swift */,
+				C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */,
+				C9343B1E282B0A34008B5DF4 /* Assets.xcassets */,
+				C9343B23282B0A34008B5DF4 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9343B53282B0A91008B5DF4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B1B282B0A34008B5DF4 /* Main.storyboard */,
+				C9343B20282B0A34008B5DF4 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C9343B54282B0A9E008B5DF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B53282B0A91008B5DF4 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9343B55282B0AB8008B5DF4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C9343B56282B0ABC008B5DF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9343B57282B0AC0008B5DF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C9343B58282B0AC4008B5DF4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +348,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9343B1A282B0A34008B5DF4 /* ViewController.swift in Sources */,
 				C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */,
 				C9343B18282B0A34008B5DF4 /* SceneDelegate.swift in Sources */,
 			);
@@ -589,7 +641,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ALTGSDSZNG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GymNote/Info.plist;
+				INFOPLIST_FILE = GymNote/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -619,7 +671,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ALTGSDSZNG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GymNote/Info.plist;
+				INFOPLIST_FILE = GymNote/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
