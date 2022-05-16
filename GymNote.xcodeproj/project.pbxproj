@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9185E8F2832DE0A004759CC /* FirstWorkoutSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9185E8E2832DE0A004759CC /* FirstWorkoutSetupViewController.swift */; };
+		C9185E932832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9185E922832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift */; };
+		C9185E952832E389004759CC /* FirstWorkoutSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9185E942832E389004759CC /* FirstWorkoutSetup.storyboard */; };
 		C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B15282B0A34008B5DF4 /* AppDelegate.swift */; };
 		C9343B18282B0A34008B5DF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */; };
 		C9343B1D282B0A34008B5DF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B1B282B0A34008B5DF4 /* Main.storyboard */; };
@@ -21,6 +24,24 @@
 		C9343B3E282B0A35008B5DF4 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3D282B0A35008B5DF4 /* NotificationController.swift */; };
 		C9343B40282B0A35008B5DF4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3F282B0A35008B5DF4 /* ComplicationController.swift */; };
 		C9343B42282B0A36008B5DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9343B41282B0A36008B5DF4 /* Assets.xcassets */; };
+		C9343B5B282B6A72008B5DF4 /* GymNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9343B59282B6A72008B5DF4 /* GymNote.xcdatamodeld */; };
+		C9343B75282CC4E5008B5DF4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B74282CC4E5008B5DF4 /* UserController.swift */; };
+		C9343B8D282CE80D008B5DF4 /* UserInfoSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B8C282CE80D008B5DF4 /* UserInfoSetupViewController.swift */; };
+		C98FC145282F144B00FF504A /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC144282F144B00FF504A /* WorkoutController.swift */; };
+		C98FC147282F145B00FF504A /* ExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC146282F145B00FF504A /* ExerciseController.swift */; };
+		C98FC149282F146400FF504A /* SetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC148282F146400FF504A /* SetController.swift */; };
+		C98FC15B28307AA500FF504A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC15A28307AA500FF504A /* StringExtension.swift */; };
+		C98FC15D2830A06400FF504A /* UserImageSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC15C2830A06400FF504A /* UserImageSetupViewController.swift */; };
+		C98FC1712830A76D00FF504A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98FC1702830A76D00FF504A /* CloudKit.framework */; };
+		C98FC173283105A100FF504A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC172283105A100FF504A /* AlertManager.swift */; };
+		C98FC1752831ED2B00FF504A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC1742831ED2B00FF504A /* Test.swift */; };
+		C98FC1892831F08400FF504A /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC1882831F08400FF504A /* User+Convenience.swift */; };
+		C9F603C5282EEAD0003DAE47 /* CoreDataMaanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */; };
+		C9F603C7282EEE8B003DAE47 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F603C6282EEE8B003DAE47 /* Onboarding.storyboard */; };
+		C9F603CA282EEF18003DAE47 /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */; };
+		C9F603CC282EF0D7003DAE47 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603CB282EF0D7003DAE47 /* StoryboardManager.swift */; };
+		C9F603CE282EF322003DAE47 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603CD282EF322003DAE47 /* TestViewController.swift */; };
+		C9F603D0282EF560003DAE47 /* UserInfoConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603CF282EF560003DAE47 /* UserInfoConfirmationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +87,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C9185E8E2832DE0A004759CC /* FirstWorkoutSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWorkoutSetupViewController.swift; sourceTree = "<group>"; };
+		C9185E922832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWorkoutTitleAndDaySetupViewController.swift; sourceTree = "<group>"; };
+		C9185E942832E389004759CC /* FirstWorkoutSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstWorkoutSetup.storyboard; sourceTree = "<group>"; };
 		C9343B12282B0A33008B5DF4 /* GymNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9343B15282B0A34008B5DF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +108,25 @@
 		C9343B41282B0A36008B5DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9343B43282B0A36008B5DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9343B44282B0A36008B5DF4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C9343B5A282B6A72008B5DF4 /* GymNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GymNote.xcdatamodel; sourceTree = "<group>"; };
+		C9343B74282CC4E5008B5DF4 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		C9343B8C282CE80D008B5DF4 /* UserInfoSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSetupViewController.swift; sourceTree = "<group>"; };
+		C98FC144282F144B00FF504A /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
+		C98FC146282F145B00FF504A /* ExerciseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseController.swift; sourceTree = "<group>"; };
+		C98FC148282F146400FF504A /* SetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetController.swift; sourceTree = "<group>"; };
+		C98FC15A28307AA500FF504A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		C98FC15C2830A06400FF504A /* UserImageSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageSetupViewController.swift; sourceTree = "<group>"; };
+		C98FC16E2830A76600FF504A /* GymNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GymNote.entitlements; sourceTree = "<group>"; };
+		C98FC1702830A76D00FF504A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		C98FC172283105A100FF504A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		C98FC1742831ED2B00FF504A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		C98FC1882831F08400FF504A /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMaanger.swift; sourceTree = "<group>"; };
+		C9F603C6282EEE8B003DAE47 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
+		C9F603CB282EF0D7003DAE47 /* StoryboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
+		C9F603CD282EF322003DAE47 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		C9F603CF282EF560003DAE47 /* UserInfoConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98FC1712830A76D00FF504A /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +148,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9185E962832E3B7004759CC /* FirstWorkoutVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C9185E922832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift */,
+				C9185E8E2832DE0A004759CC /* FirstWorkoutSetupViewController.swift */,
+			);
+			path = FirstWorkoutVCs;
+			sourceTree = "<group>";
+		};
 		C9343B09282B0A33008B5DF4 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +164,7 @@
 				C9343B2A282B0A34008B5DF4 /* GymNote WatchKit App */,
 				C9343B38282B0A35008B5DF4 /* GymNote WatchKit Extension */,
 				C9343B13282B0A33008B5DF4 /* Products */,
+				C98FC16F2830A76D00FF504A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,11 +181,13 @@
 		C9343B14282B0A33008B5DF4 /* GymNote */ = {
 			isa = PBXGroup;
 			children = (
+				C98FC16E2830A76600FF504A /* GymNote.entitlements */,
 				C9343B56282B0ABC008B5DF4 /* Models */,
 				C9343B55282B0AB8008B5DF4 /* Controllers */,
 				C9343B54282B0A9E008B5DF4 /* Views */,
 				C9343B57282B0AC0008B5DF4 /* Extensions */,
 				C9343B58282B0AC4008B5DF4 /* Helpers */,
+				C9F603C8282EEEFD003DAE47 /* Constants */,
 				C9343B52282B0A45008B5DF4 /* Resources */,
 			);
 			path = GymNote;
@@ -175,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				C9343B1B282B0A34008B5DF4 /* Main.storyboard */,
+				C9F603C6282EEE8B003DAE47 /* Onboarding.storyboard */,
+				C9185E942832E389004759CC /* FirstWorkoutSetup.storyboard */,
 				C9343B20282B0A34008B5DF4 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -191,6 +249,8 @@
 		C9343B55282B0AB8008B5DF4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9343B73282CC4CD008B5DF4 /* ModelControllers */,
+				C9343B72282CC4C2008B5DF4 /* ViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,6 +258,7 @@
 		C9343B56282B0ABC008B5DF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9343B70282CC253008B5DF4 /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +266,7 @@
 		C9343B57282B0AC0008B5DF4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C98FC15A28307AA500FF504A /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,8 +274,84 @@
 		C9343B58282B0AC4008B5DF4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C9F603CB282EF0D7003DAE47 /* StoryboardManager.swift */,
+				C98FC172283105A100FF504A /* AlertManager.swift */,
+				C98FC1742831ED2B00FF504A /* Test.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C9343B70282CC253008B5DF4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B59282B6A72008B5DF4 /* GymNote.xcdatamodeld */,
+				C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */,
+				C9343B71282CC26C008B5DF4 /* NSManagedObjectSubclasses */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C9343B71282CC26C008B5DF4 /* NSManagedObjectSubclasses */ = {
+			isa = PBXGroup;
+			children = (
+				C98FC1882831F08400FF504A /* User+Convenience.swift */,
+			);
+			path = NSManagedObjectSubclasses;
+			sourceTree = "<group>";
+		};
+		C9343B72282CC4C2008B5DF4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C98FC143282F13EA00FF504A /* MainStroyboardVCs */,
+				C98FC142282F13BA00FF504A /* OnboardingVCs */,
+				C9185E962832E3B7004759CC /* FirstWorkoutVCs */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C9343B73282CC4CD008B5DF4 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B74282CC4E5008B5DF4 /* UserController.swift */,
+				C98FC144282F144B00FF504A /* WorkoutController.swift */,
+				C98FC146282F145B00FF504A /* ExerciseController.swift */,
+				C98FC148282F146400FF504A /* SetController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		C98FC142282F13BA00FF504A /* OnboardingVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C9343B8C282CE80D008B5DF4 /* UserInfoSetupViewController.swift */,
+				C98FC15C2830A06400FF504A /* UserImageSetupViewController.swift */,
+				C9F603CF282EF560003DAE47 /* UserInfoConfirmationViewController.swift */,
+			);
+			path = OnboardingVCs;
+			sourceTree = "<group>";
+		};
+		C98FC143282F13EA00FF504A /* MainStroyboardVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C9F603CD282EF322003DAE47 /* TestViewController.swift */,
+			);
+			path = MainStroyboardVCs;
+			sourceTree = "<group>";
+		};
+		C98FC16F2830A76D00FF504A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C98FC1702830A76D00FF504A /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9F603C8282EEEFD003DAE47 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,9 +456,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9185E952832E389004759CC /* FirstWorkoutSetup.storyboard in Resources */,
 				C9343B22282B0A34008B5DF4 /* LaunchScreen.storyboard in Resources */,
 				C9343B1F282B0A34008B5DF4 /* Assets.xcassets in Resources */,
 				C9343B1D282B0A34008B5DF4 /* Main.storyboard in Resources */,
+				C9F603C7282EEE8B003DAE47 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +488,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F603CC282EF0D7003DAE47 /* StoryboardManager.swift in Sources */,
 				C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */,
+				C9343B75282CC4E5008B5DF4 /* UserController.swift in Sources */,
+				C9185E8F2832DE0A004759CC /* FirstWorkoutSetupViewController.swift in Sources */,
+				C98FC15D2830A06400FF504A /* UserImageSetupViewController.swift in Sources */,
+				C9185E932832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift in Sources */,
+				C98FC147282F145B00FF504A /* ExerciseController.swift in Sources */,
+				C98FC145282F144B00FF504A /* WorkoutController.swift in Sources */,
+				C98FC173283105A100FF504A /* AlertManager.swift in Sources */,
+				C9F603D0282EF560003DAE47 /* UserInfoConfirmationViewController.swift in Sources */,
+				C98FC1892831F08400FF504A /* User+Convenience.swift in Sources */,
+				C9343B8D282CE80D008B5DF4 /* UserInfoSetupViewController.swift in Sources */,
 				C9343B18282B0A34008B5DF4 /* SceneDelegate.swift in Sources */,
+				C98FC149282F146400FF504A /* SetController.swift in Sources */,
+				C9F603CE282EF322003DAE47 /* TestViewController.swift in Sources */,
+				C9F603CA282EEF18003DAE47 /* StoryboardConstants.swift in Sources */,
+				C9343B5B282B6A72008B5DF4 /* GymNote.xcdatamodeld in Sources */,
+				C98FC15B28307AA500FF504A /* StringExtension.swift in Sources */,
+				C98FC1752831ED2B00FF504A /* Test.swift in Sources */,
+				C9F603C5282EEAD0003DAE47 /* CoreDataMaanger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +795,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GymNote/GymNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ALTGSDSZNG;
@@ -667,6 +826,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GymNote/GymNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ALTGSDSZNG;
@@ -733,6 +893,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9343B59282B6A72008B5DF4 /* GymNote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9343B5A282B6A72008B5DF4 /* GymNote.xcdatamodel */,
+			);
+			currentVersion = C9343B5A282B6A72008B5DF4 /* GymNote.xcdatamodel */;
+			path = GymNote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C9343B0A282B0A33008B5DF4 /* Project object */;
 }
