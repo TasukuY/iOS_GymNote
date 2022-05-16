@@ -19,6 +19,6 @@ struct StoryboardConstants {
     
     static let segueToImageSetupVC = "toImageSetupVC"
     static let segueToAccountConfirmationVC = "toAccountConfirmationVC"
-    static let segueToWorkoutTitleAndDaySetupVC = "toWorkoutTitleAndDaySetupVC"
+    static let segueToWorkoutTitleAndDaySetupVC = "toFirstWorkoutSetupVC"
     
 }//End of struct
