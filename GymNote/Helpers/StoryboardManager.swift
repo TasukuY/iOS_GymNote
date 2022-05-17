@@ -37,4 +37,16 @@ struct StoryboardManager {
         window?.makeKeyAndVisible()
     }
     
+    func instantiateFirstWorkoutSetupStoryboard() {
+        let storyboard = UIStoryboard(name: StoryboardConstants.firstWorkoutSetupStoryboard, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: StoryboardConstants.firstWorkoutSetupStoryboardID) as? FirstWorkoutTitleAndDaySetupViewController
+        else { return }
+        
+        let scene = UIApplication.shared.connectedScenes
+        let windowScene = scene.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+    }
+    
 }//End of struct

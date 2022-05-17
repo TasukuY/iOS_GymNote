@@ -22,7 +22,6 @@ class UserInfoSetupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardFeatureSetup()
-//        shouldPresentStoryboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {

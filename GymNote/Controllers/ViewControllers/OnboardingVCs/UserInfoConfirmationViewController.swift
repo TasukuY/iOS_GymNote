@@ -35,7 +35,10 @@ class UserInfoConfirmationViewController: UIViewController {
     @IBAction func doneSetupButtonTapped(_ sender: Any) {
         setupUserInfo()
         if user != nil {
-            userIsOnboarded()
+//            DispatchQueue.main.async {
+                UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
+                self.storyboardManager.instantiateFirstWorkoutSetupStoryboard()
+//            }
         } else {
             AlertManager.showUserSetupError(on: self)
         }
@@ -61,11 +64,6 @@ class UserInfoConfirmationViewController: UIViewController {
         weightLabel.text = String(weight)
         feetLabel.text = String(feet)
         inchesLabel.text = String(inches)
-    }
-    
-    func userIsOnboarded() {
-        UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
-        storyboardManager.instantiateMainStoryboard()
     }
 
 }//End of class

@@ -159,7 +159,9 @@
                             <constraint firstItem="yvE-sc-HcM" firstAttribute="width" secondItem="cDt-zK-qQG" secondAttribute="width" multiplier="0.85" id="vkF-D9-VG9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CRc-NP-QmI"/>
+                    <navigationItem key="navigationItem" id="CRc-NP-QmI">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="cLJ-x9-hMw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="feetTextField" destination="P9o-ps-aJJ" id="p67-9D-pWt"/>
                         <outlet property="inchesTextField" destination="lQc-HP-dwY" id="odS-Yk-AWP"/>
@@ -222,7 +224,9 @@
                             <constraint firstItem="Zzo-Z0-oV7" firstAttribute="centerX" secondItem="oNm-z0-fQP" secondAttribute="centerX" id="zQz-Hc-1W8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vwN-SP-UBP"/>
+                    <navigationItem key="navigationItem" id="vwN-SP-UBP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="bIZ-K1-gM4"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNL-Q1-CBm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +256,7 @@
                                     <action selector="doneSetupButtonTapped:" destination="t1o-eT-yfn" eventType="touchUpInside" id="BmX-jy-Hrz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-yy-jQq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Confirmation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-yy-jQq">
                                 <rect key="frame" x="31" y="136" width="352" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>

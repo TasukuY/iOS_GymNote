@@ -15,6 +15,7 @@ struct StoryboardConstants {
     static let mainstoryboardID = "mainStroyboardKey"
     static let mainstoryboard = "Main"
     static let onboardingStoryboard = "Onboarding"
+    static let firstWorkoutSetupStoryboard = "FirstWorkoutSetup"
     static let isOnboardedKey = "isOnboading"
     
     static let segueToImageSetupVC = "toImageSetupVC"

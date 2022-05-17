@@ -14,6 +14,8 @@ class TestViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var feetLabel: UILabel!
     @IBOutlet weak var inchesLabel: UILabel!
+    @IBOutlet weak var workoutTitleLabel: UILabel!
+    @IBOutlet weak var workoutStartingDatesLabel: UILabel!
     
     //MARK: - Properties
     
@@ -27,7 +29,8 @@ class TestViewController: UIViewController {
     
     //MARK: - Helper Methods
     func setupView() {
-        guard let user = UserController.shared.user
+        guard let user = UserController.shared.user,
+              let workouts = user.workouts
         else { return }
         let height = String(user.height)
         let feet = height.split(separator: ".")[0]
@@ -36,6 +39,13 @@ class TestViewController: UIViewController {
         weightLabel.text = String(user.weight)
         feetLabel.text = String(feet)
         inchesLabel.text = String(inches)
+        
+        if workouts.count > 0 {
+            
+        } else {
+            
+        }
+        
     }
 
 }//End of class

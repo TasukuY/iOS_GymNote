@@ -110,15 +110,37 @@
                                     <constraint firstItem="RNd-Ek-2L2" firstAttribute="width" secondItem="bwG-AI-orR" secondAttribute="width" id="Od9-lF-d3c"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Workout Title)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP2-Iz-am9">
+                                <rect key="frame" x="142" y="559.5" width="130.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7EF-mZ-gAc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Dates)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP4-Om-ja1">
+                                <rect key="frame" x="180" y="601.5" width="54" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jSG-cg-4oa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cL7-vy-JSf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pP2-Iz-am9" firstAttribute="top" secondItem="bwG-AI-orR" secondAttribute="bottom" constant="24" id="3Lv-kw-zzR"/>
+                            <constraint firstItem="pP2-Iz-am9" firstAttribute="centerX" secondItem="cL7-vy-JSf" secondAttribute="centerX" id="Cfs-kR-Eaa"/>
                             <constraint firstItem="NKE-TV-6Us" firstAttribute="width" secondItem="cL7-vy-JSf" secondAttribute="width" multiplier="0.85" id="GrT-yU-Btb"/>
                             <constraint firstItem="NKE-TV-6Us" firstAttribute="top" secondItem="cL7-vy-JSf" secondAttribute="top" constant="48" id="QQe-ui-9lq"/>
+                            <constraint firstItem="ZP4-Om-ja1" firstAttribute="top" secondItem="pP2-Iz-am9" secondAttribute="bottom" constant="12" id="ROv-lj-bZc"/>
                             <constraint firstItem="bwG-AI-orR" firstAttribute="width" secondItem="cL7-vy-JSf" secondAttribute="width" multiplier="0.8" id="Wqk-KB-da7"/>
                             <constraint firstItem="bwG-AI-orR" firstAttribute="centerX" secondItem="cL7-vy-JSf" secondAttribute="centerX" id="iwD-r5-nF0"/>
                             <constraint firstItem="NKE-TV-6Us" firstAttribute="centerX" secondItem="cL7-vy-JSf" secondAttribute="centerX" id="n31-bD-ynD"/>
+                            <constraint firstItem="ZP4-Om-ja1" firstAttribute="centerX" secondItem="cL7-vy-JSf" secondAttribute="centerX" id="wal-Bg-NeZ"/>
                             <constraint firstItem="bwG-AI-orR" firstAttribute="top" secondItem="NKE-TV-6Us" secondAttribute="bottom" constant="60" id="yIM-mb-weq"/>
                         </constraints>
                     </view>
@@ -129,11 +151,13 @@
                         <outlet property="inchesLabel" destination="dMW-Te-iDq" id="tMi-W2-aGp"/>
                         <outlet property="usernameLabel" destination="XOw-aX-WLj" id="6ia-Dx-SME"/>
                         <outlet property="weightLabel" destination="FIs-2v-fgr" id="2fN-fU-1eY"/>
+                        <outlet property="workoutStartingDatesLabel" destination="ZP4-Om-ja1" id="2Vc-c6-Azr"/>
+                        <outlet property="workoutTitleLabel" destination="pP2-Iz-am9" id="qLx-20-zXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPb-RK-9bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="98"/>
+            <point key="canvasLocation" x="1592.753623188406" y="97.767857142857139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ame-8n-MmZ">
@@ -141,6 +165,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="h6H-Bc-vUJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="569-KG-r2R">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

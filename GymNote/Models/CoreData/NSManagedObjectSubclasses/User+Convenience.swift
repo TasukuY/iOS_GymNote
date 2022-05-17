@@ -16,6 +16,7 @@ extension User {
         self.username = username
         self.weight = weight
         self.height = height
+        self.workouts = []
     }
     
 }//End of extension
