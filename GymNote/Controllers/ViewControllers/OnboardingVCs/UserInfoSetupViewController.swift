@@ -21,7 +21,7 @@ class UserInfoSetupViewController: UIViewController {
     //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideKeyboardFeatureSetup()
+        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,11 +30,13 @@ class UserInfoSetupViewController: UIViewController {
     }
     
     //MARK: - IBActions
-    
-    @IBAction func nextButtonTapped(_ sender: UIButton) {
-    }
+    @IBAction func nextButtonTapped(_ sender: UIButton) {}
     
     //MARK: - Helper Methods
+    func setupView() {
+        hideKeyboardFeatureSetup()
+    }
+    
     func hideKeyboardFeatureSetup() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
@@ -66,6 +68,7 @@ class UserInfoSetupViewController: UIViewController {
                 AlertManager.showIncompleteFormAlert(on: self)
                 return false
             }
+            
             //Check Invalid Numbers
             if let _ = weightInput.doubleValue,
                let feet = feetInput.integerValue,

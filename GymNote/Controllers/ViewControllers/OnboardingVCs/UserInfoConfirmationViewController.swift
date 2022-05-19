@@ -23,7 +23,6 @@ class UserInfoConfirmationViewController: UIViewController {
     var height: Double?
     var feet: Int?
     var inches: Int?
-    var user: User?
     
     //MARK: - Lifecycles
     override func viewDidLoad() {
@@ -34,7 +33,7 @@ class UserInfoConfirmationViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func doneSetupButtonTapped(_ sender: Any) {
         setupUserInfo()
-        if user != nil {
+        if UserController.shared.user != nil {
 //            DispatchQueue.main.async {
                 UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
                 self.storyboardManager.instantiateFirstWorkoutSetupStoryboard()
@@ -51,7 +50,6 @@ class UserInfoConfirmationViewController: UIViewController {
               let height = height
         else { return }
         UserController.shared.saveUserInfo(with: username, and: weight, and: height)
-        self.user = UserController.shared.user
     }
     
     func setupView() {

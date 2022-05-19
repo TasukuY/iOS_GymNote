@@ -29,4 +29,12 @@ class AlertManager {
         showBasicAlert(on: vc, with: "User Setup Error", message: "Error occured while setting up your account. Please re-do the set up process again.")
     }
     
+    static func showWorkoutTitleEmptyAlert(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Workout title is Empty", message: "Please set the title for this Workout")
+    }
+    
+    static func showSetWorkoutRepeatValueAlert(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Repeat Value is not set", message: "Please set the Repeat Value for this Workout")
+    }
+    
 }//End of class

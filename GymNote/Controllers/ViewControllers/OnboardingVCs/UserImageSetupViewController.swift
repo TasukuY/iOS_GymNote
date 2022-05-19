@@ -21,10 +21,14 @@ class UserImageSetupViewController: UIViewController {
     //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
     }
     
     //MARK: - Helper Methods
-
+    func setupView() {
+        
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardConstants.segueToAccountConfirmationVC {

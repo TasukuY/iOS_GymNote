@@ -9,7 +9,7 @@ import Foundation
 
 struct StoryboardConstants {
     
-    //Onboarding Stroyboard Related
+    //Stroyboard ID Related
     static let onboadingStoryboardID = "onboardingStoryboardKey"
     static let firstWorkoutSetupStoryboardID = "firstWorkoutSetupStoryboardKey"
     static let mainstoryboardID = "mainStroyboardKey"
@@ -18,8 +18,10 @@ struct StoryboardConstants {
     static let firstWorkoutSetupStoryboard = "FirstWorkoutSetup"
     static let isOnboardedKey = "isOnboading"
     
+    //Segue Related
     static let segueToImageSetupVC = "toImageSetupVC"
     static let segueToAccountConfirmationVC = "toAccountConfirmationVC"
-    static let segueToWorkoutTitleAndDaySetupVC = "toFirstWorkoutSetupVC"
+    static let segueToFirstWorkoutSetupVC = "toFirstWorkoutSetupVC"
+    static let segueToExerciseSetupVC = "toExerciseSetupVC"
     
 }//End of struct

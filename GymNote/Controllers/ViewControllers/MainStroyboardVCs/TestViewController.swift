@@ -29,9 +29,8 @@ class TestViewController: UIViewController {
     
     //MARK: - Helper Methods
     func setupView() {
-        guard let user = UserController.shared.user,
-              let workouts = user.workouts
-        else { return }
+        guard let user = UserController.shared.user else { return }
+            
         let height = String(user.height)
         let feet = height.split(separator: ".")[0]
         let inches = height.split(separator: ".")[1]
@@ -40,10 +39,16 @@ class TestViewController: UIViewController {
         feetLabel.text = String(feet)
         inchesLabel.text = String(inches)
         
-        if workouts.count > 0 {
-            
+        if UserController.shared.workouts.count > 0 {
+            let title = UserController.shared.workouts[0].title
+            let date = UserController.shared.workouts[0].date
+            let workoutDates = date?.datesFormatForWorkout() ?? "No Dates.."
+            let workoutTime = date?.timeFormatForWorkout() ?? "No Time.."
+            workoutTitleLabel.text = title
+            workoutStartingDatesLabel.text = "\(workoutDates) at \(workoutTime)"
         } else {
-            
+            workoutTitleLabel.text = "No Workouts..."
+            workoutStartingDatesLabel.text = "No Dates..."
         }
         
     }

@@ -12,8 +12,10 @@ class UserController: NSObject {
     
     //MARK: - Properties
     static let shared = UserController()
-    let workouts: [Workout] = []
     var user: User?
+    var workouts: [Workout] = []
+    var exercises: [Exercise] = []
+    var exerciseSets: [ExerciseSet] = []
     
     //CoreData+CloudKit
     private lazy var fetchRequest: NSFetchRequest<User> = {
@@ -38,6 +40,23 @@ class UserController: NSObject {
         CoreDataManager.shared.saveContext()
     }
     
+    func update() {}
+    func delete() {}
+    
+    //MARK: - Helper Methods for SOT
+    func add(newWorkout: Workout) {
+        workouts.append(newWorkout)
+    }
+    
+    func add(newExercise: Exercise) {
+        exercises.append(newExercise)
+    }
+    
+    func add(newExerciseSets: ExerciseSet) {
+        exerciseSets.append(newExerciseSets)
+    }
+    
+    //MARK: - Helper Methods for CoreData
     func fetchUserData() {
         do {
             try fetchedResultsController.performFetch()
@@ -46,15 +65,16 @@ class UserController: NSObject {
         }
     }
     
-    func update() {
+    func fetchUser() {
+        let fetchedUserObjects = fetchedResultsController.fetchedObjects ?? []
+        guard let user = user,
+              let index = fetchedUserObjects.firstIndex(of: user)
+        else { return }
         
-    }
-    
-    func delete() {
+        let fetchedUser = fetchedUserObjects[index]
         
+        self.user = fetchedUser
     }
-    
-    //MARK: - Helper Methods
     
 }//End of class
 

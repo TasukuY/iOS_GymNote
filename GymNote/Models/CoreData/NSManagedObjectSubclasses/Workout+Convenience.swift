@@ -10,15 +10,14 @@ import CoreData
 
 extension Workout {
     
-    @discardableResult convenience init(title: String, date: Date, user: User,
+    @discardableResult convenience init(title: String, date: Date, user: User, repeatWorkout: String,
                                         context: NSManagedObjectContext = CoreDataManager.managedContext) {
         self.init(context: context)
         self.title = title
         self.date = date
-        self.exercises = []
+        self.repeatWorkout = repeatWorkout
         self.user = user
-        
-        self.user?.workouts?.adding(self)
+        self.exercises = []
     }
     
 }//End of extension

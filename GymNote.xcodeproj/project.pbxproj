@@ -11,6 +11,12 @@
 		C9185E932832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9185E922832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift */; };
 		C9185E952832E389004759CC /* FirstWorkoutSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9185E942832E389004759CC /* FirstWorkoutSetup.storyboard */; };
 		C9185EBC283370B3004759CC /* Workout+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9185EBB283370B3004759CC /* Workout+Convenience.swift */; };
+		C921EE4728342A580064DD7C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE4628342A580064DD7C /* DateExtension.swift */; };
+		C921EE492834C3780064DD7C /* WorkoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE482834C3780064DD7C /* WorkoutConstants.swift */; };
+		C921EE4B2834CEA20064DD7C /* ExerciseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE4A2834CEA20064DD7C /* ExerciseConstants.swift */; };
+		C921EE4D2834CF160064DD7C /* Exercise+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE4C2834CF160064DD7C /* Exercise+Convenience.swift */; };
+		C921EE4F283517A00064DD7C /* FirstExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE4E283517A00064DD7C /* FirstExerciseTableViewCell.swift */; };
+		C921EE51283625ED0064DD7C /* ExerciseSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE50283625ED0064DD7C /* ExerciseSet+Convenience.swift */; };
 		C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B15282B0A34008B5DF4 /* AppDelegate.swift */; };
 		C9343B18282B0A34008B5DF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */; };
 		C9343B1D282B0A34008B5DF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B1B282B0A34008B5DF4 /* Main.storyboard */; };
@@ -92,6 +98,12 @@
 		C9185E922832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWorkoutTitleAndDaySetupViewController.swift; sourceTree = "<group>"; };
 		C9185E942832E389004759CC /* FirstWorkoutSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstWorkoutSetup.storyboard; sourceTree = "<group>"; };
 		C9185EBB283370B3004759CC /* Workout+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+Convenience.swift"; sourceTree = "<group>"; };
+		C921EE4628342A580064DD7C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		C921EE482834C3780064DD7C /* WorkoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutConstants.swift; sourceTree = "<group>"; };
+		C921EE4A2834CEA20064DD7C /* ExerciseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseConstants.swift; sourceTree = "<group>"; };
+		C921EE4C2834CF160064DD7C /* Exercise+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+Convenience.swift"; sourceTree = "<group>"; };
+		C921EE4E283517A00064DD7C /* FirstExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		C921EE50283625ED0064DD7C /* ExerciseSet+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSet+Convenience.swift"; sourceTree = "<group>"; };
 		C9343B12282B0A33008B5DF4 /* GymNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9343B15282B0A34008B5DF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9343B17282B0A34008B5DF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +174,7 @@
 			children = (
 				C9185E922832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift */,
 				C9185E8E2832DE0A004759CC /* FirstWorkoutSetupViewController.swift */,
+				C921EE4E283517A00064DD7C /* FirstExerciseTableViewCell.swift */,
 			);
 			path = FirstWorkoutVCs;
 			sourceTree = "<group>";
@@ -276,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				C98FC15A28307AA500FF504A /* StringExtension.swift */,
+				C921EE4628342A580064DD7C /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +319,8 @@
 			children = (
 				C98FC1882831F08400FF504A /* User+Convenience.swift */,
 				C9185EBB283370B3004759CC /* Workout+Convenience.swift */,
+				C921EE4C2834CF160064DD7C /* Exercise+Convenience.swift */,
+				C921EE50283625ED0064DD7C /* ExerciseSet+Convenience.swift */,
 			);
 			path = NSManagedObjectSubclasses;
 			sourceTree = "<group>";
@@ -360,6 +376,8 @@
 			isa = PBXGroup;
 			children = (
 				C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */,
+				C921EE482834C3780064DD7C /* WorkoutConstants.swift */,
+				C921EE4A2834CEA20064DD7C /* ExerciseConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -501,9 +519,11 @@
 			files = (
 				C9F603CC282EF0D7003DAE47 /* StoryboardManager.swift in Sources */,
 				C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */,
+				C921EE51283625ED0064DD7C /* ExerciseSet+Convenience.swift in Sources */,
 				C9343B75282CC4E5008B5DF4 /* UserController.swift in Sources */,
 				C9185E8F2832DE0A004759CC /* FirstWorkoutSetupViewController.swift in Sources */,
 				C9185EBC283370B3004759CC /* Workout+Convenience.swift in Sources */,
+				C921EE492834C3780064DD7C /* WorkoutConstants.swift in Sources */,
 				C98FC15D2830A06400FF504A /* UserImageSetupViewController.swift in Sources */,
 				C9185E932832DFF5004759CC /* FirstWorkoutTitleAndDaySetupViewController.swift in Sources */,
 				C98FC147282F145B00FF504A /* ExerciseController.swift in Sources */,
@@ -516,10 +536,14 @@
 				C98FC149282F146400FF504A /* SetController.swift in Sources */,
 				C9F603CE282EF322003DAE47 /* TestViewController.swift in Sources */,
 				C9F603CA282EEF18003DAE47 /* StoryboardConstants.swift in Sources */,
+				C921EE4D2834CF160064DD7C /* Exercise+Convenience.swift in Sources */,
+				C921EE4728342A580064DD7C /* DateExtension.swift in Sources */,
 				C9343B5B282B6A72008B5DF4 /* GymNote.xcdatamodeld in Sources */,
+				C921EE4F283517A00064DD7C /* FirstExerciseTableViewCell.swift in Sources */,
 				C98FC15B28307AA500FF504A /* StringExtension.swift in Sources */,
 				C98FC1752831ED2B00FF504A /* Test.swift in Sources */,
 				C9F603C5282EEAD0003DAE47 /* CoreDataMaanger.swift in Sources */,
+				C921EE4B2834CEA20064DD7C /* ExerciseConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
