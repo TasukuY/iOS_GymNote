@@ -10,14 +10,17 @@ import CoreData
 
 class ExerciseController: NSObject {
     
-    //MARK: - Properties    
-    private lazy var fetchRequest: NSFetchRequest<User> = {
-        let request = NSFetchRequest<User>(entityName: "Exercise")
+    //MARK: - Properties
+    static let shared = ExerciseController()
+    var exercises: [Exercise] = []
+    
+    private lazy var fetchRequest: NSFetchRequest<Exercise> = {
+        let request = NSFetchRequest<Exercise>(entityName: "Exercise")
         request.predicate = NSPredicate(value: true)
         return request
     }()
     
-    private lazy var fetchedResultsController: NSFetchedResultsController<User> = {
+    private lazy var fetchedResultsController: NSFetchedResultsController<Exercise> = {
        let fetchedRC = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                   managedObjectContext: CoreDataManager.managedContext,
                                                   sectionNameKeyPath: nil,
@@ -27,16 +30,24 @@ class ExerciseController: NSObject {
     }()
     
     //MARK: - CRUD funcs
-    static func saveExercise(with title: String, exerciseType: String, workout: Workout) {
-        let newExercise = Exercise(title: title, exerciseType: exerciseType, workout: workout)
+    func saveExercise(newExercise: Exercise, workout: Workout) {
         //adding the new exercise to the array of exercises in the Workout Core Data class
         workout.addToExercises(newExercise)
-        //adding the new exercise to the SOT array in UserController class
-        UserController.shared.add(newExercise: newExercise)
+        //adding the new exercise to the SOT array
+        exercises.append(newExercise)
         CoreDataManager.shared.saveContext()
     }
     
     //MARK: - Helper Methods
+    func fetchExerciseData() {
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Error in \(#function) : \(error.localizedDescription) \n--\n \(error)")
+        }
+        let fetchedExercises = fetchedResultsController.fetchedObjects ?? []
+        self.exercises = fetchedExercises
+    }
     
 }//End of class
 

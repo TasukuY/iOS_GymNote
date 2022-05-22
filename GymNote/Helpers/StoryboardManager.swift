@@ -37,15 +37,13 @@ struct StoryboardManager {
         window?.makeKeyAndVisible()
     }
     
-    func instantiateFirstWorkoutSetupStoryboard() {
-        let storyboard = UIStoryboard(name: StoryboardConstants.firstWorkoutSetupStoryboard, bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: StoryboardConstants.firstWorkoutSetupStoryboardID) as? FirstWorkoutTitleAndDaySetupViewController
-        else { return }
-        
+    func instantiateWorkoutSetupStoryboard() {
+        let storyboard = UIStoryboard(name: StoryboardConstants.workoutSetupStoryboard, bundle: nil)
+        let navVC = storyboard.instantiateViewController(withIdentifier: StoryboardConstants.workoutSetupNavController)
         let scene = UIApplication.shared.connectedScenes
         let windowScene = scene.first as? UIWindowScene
         let window = windowScene?.windows.first
-        window?.rootViewController = vc
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
     

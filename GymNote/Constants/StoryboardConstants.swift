@@ -11,17 +11,20 @@ struct StoryboardConstants {
     
     //Stroyboard ID Related
     static let onboadingStoryboardID = "onboardingStoryboardKey"
-    static let firstWorkoutSetupStoryboardID = "firstWorkoutSetupStoryboardKey"
+    static let workoutSetupStoryboardID = "workoutSetupStoryboardKey"
     static let mainstoryboardID = "mainStroyboardKey"
     static let mainstoryboard = "Main"
     static let onboardingStoryboard = "Onboarding"
-    static let firstWorkoutSetupStoryboard = "FirstWorkoutSetup"
+    static let workoutSetupStoryboard = "WorkoutSetup"
     static let isOnboardedKey = "isOnboading"
+    static let workoutSetupNavController = "workoutSetupNavController"
     
     //Segue Related
     static let segueToImageSetupVC = "toImageSetupVC"
     static let segueToAccountConfirmationVC = "toAccountConfirmationVC"
-    static let segueToFirstWorkoutSetupVC = "toFirstWorkoutSetupVC"
+    static let segueToExerciseListVC = "toExerciseListVC"
     static let segueToExerciseSetupVC = "toExerciseSetupVC"
+    static let segueToSetsVC = "toSetsVC"
+    static let segueToExerciseDetails = "toExerciseDetails"
     
 }//End of struct

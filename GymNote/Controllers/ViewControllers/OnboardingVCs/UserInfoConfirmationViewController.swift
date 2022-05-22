@@ -15,6 +15,7 @@ class UserInfoConfirmationViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var feetLabel: UILabel!
     @IBOutlet weak var inchesLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     //MARK: - Properties
     private let storyboardManager = StoryboardManager()
@@ -23,6 +24,7 @@ class UserInfoConfirmationViewController: UIViewController {
     var height: Double?
     var feet: Int?
     var inches: Int?
+    var profileImage: UIImage?
     
     //MARK: - Lifecycles
     override func viewDidLoad() {
@@ -34,12 +36,14 @@ class UserInfoConfirmationViewController: UIViewController {
     @IBAction func doneSetupButtonTapped(_ sender: Any) {
         setupUserInfo()
         if UserController.shared.user != nil {
-//            DispatchQueue.main.async {
+            DispatchQueue.main.async {
                 UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
-                self.storyboardManager.instantiateFirstWorkoutSetupStoryboard()
-//            }
+                self.storyboardManager.instantiateWorkoutSetupStoryboard()
+            }
         } else {
-            AlertManager.showUserSetupError(on: self)
+            DispatchQueue.main.async {
+                AlertManager.showUserSetupError(on: self)                
+            }
         }
     }
     
@@ -47,21 +51,35 @@ class UserInfoConfirmationViewController: UIViewController {
     func setupUserInfo() {
         guard let username = username,
               let weight = weight,
-              let height = height
+              let height = height,
+              let profileImage = profileImage
         else { return }
-        UserController.shared.saveUserInfo(with: username, and: weight, and: height)
+        UserController.shared.saveUserInfoWith(username: username, weight: weight, height: height, prifileImage: profileImage)
     }
     
     func setupView() {
         guard let username = username,
               let weight = weight,
               let feet = feet,
-              let inches = inches
+              let inches = inches,
+              let profileImage = profileImage
         else { return }
-        usernameLabel.text = username
-        weightLabel.text = String(weight)
-        feetLabel.text = String(feet)
-        inchesLabel.text = String(inches)
+        DispatchQueue.main.async {
+            self.usernameLabel.text = username
+            self.weightLabel.text = String(weight)
+            self.feetLabel.text = String(feet)
+            self.inchesLabel.text = String(inches)
+            self.profileImageView.image = profileImage
+            self.setupProfileImageView()
+        }
+    }
+    
+    func setupProfileImageView() {
+        profileImageView.layer.borderWidth = 1.0
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.borderColor = UIColor.label.cgColor
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.height / 2
+        profileImageView.clipsToBounds = true
     }
 
 }//End of class

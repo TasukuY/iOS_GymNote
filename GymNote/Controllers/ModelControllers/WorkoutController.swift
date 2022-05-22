@@ -7,17 +7,21 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class WorkoutController: NSObject {
     
     //MARK: - Properties
-    private lazy var fetchRequest: NSFetchRequest<User> = {
-        let request = NSFetchRequest<User>(entityName: "Workout")
+    static let shared = WorkoutController()
+    var workouts: [Workout] = []
+    
+    private lazy var fetchRequest: NSFetchRequest<Workout> = {
+        let request = NSFetchRequest<Workout>(entityName: "Workout")
         request.predicate = NSPredicate(value: true)
         return request
     }()
     
-    private lazy var fetchedResultsController: NSFetchedResultsController<User> = {
+    private lazy var fetchedResultsController: NSFetchedResultsController<Workout> = {
        let fetchedRC = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                   managedObjectContext: CoreDataManager.managedContext,
                                                   sectionNameKeyPath: nil,
@@ -28,17 +32,25 @@ class WorkoutController: NSObject {
     
     
     //MARK: - CRUD funcs
-    static func saveWorkout(with title: String, date: Date, repeatValue: String) {
+    func saveWorkout(newWorkout: Workout) {
         guard let user = UserController.shared.user else { return }
-        let newWorkout = Workout(title: title, date: date, user: user, repeatWorkout: repeatValue)
         //adding the new workout to the array of workouts in the User Core Data class
         user.addToWorkouts(newWorkout)
-        //adding the new workout to the SOT array in UserController class
-        UserController.shared.add(newWorkout: newWorkout)
+        //adding the new workout to the SOT array
+        workouts.append(newWorkout)
         CoreDataManager.shared.saveContext()
     }
     
-    //MARK: - Helper Methods
+    //MARK: - Helper Methods for CoreData
+    func fetchWorkoutData() {
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Error in \(#function) : \(error.localizedDescription) \n--\n \(error)")
+        }
+        let fetchedWorkouts = fetchedResultsController.fetchedObjects ?? []
+        self.workouts = fetchedWorkouts
+    }
     
 }//End of class
 

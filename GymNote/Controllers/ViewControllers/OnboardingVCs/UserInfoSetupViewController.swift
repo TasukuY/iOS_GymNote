@@ -77,7 +77,7 @@ class UserInfoSetupViewController: UIViewController {
                 //Valid User Info
             } else {
                 //Invalid Numbers
-                AlertManager.showIncorrectInputTypeAlert(on: self)
+                AlertManager.showIncorrectInputTypeAlert(on: self, correctValue: "numbers", targetFields: "weight and height fields")
                 return false
             }
         }

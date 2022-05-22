@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //              let exerciseType = exercise1.exerciseType
 //        else { return false }
 //        ExerciseController.saveExercise(with: exerciseTitle, exerciseType: exerciseType, workout: testWorkout)
+//        let set1 = ExerciseSet(exercise: exercise1, setType: exerciseType, weight: 315, reps: 5, distance: nil, duration: nil, note: nil)
+//        SetController.saveSets(for: exercise1, setType: exerciseType, weight: 315, reps: 5, distance: nil, duration: nil, note: nil)
         
         return true
     }

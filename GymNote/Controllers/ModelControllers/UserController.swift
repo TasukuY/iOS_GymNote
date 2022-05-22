@@ -13,9 +13,6 @@ class UserController: NSObject {
     //MARK: - Properties
     static let shared = UserController()
     var user: User?
-    var workouts: [Workout] = []
-    var exercises: [Exercise] = []
-    var exerciseSets: [ExerciseSet] = []
     
     //CoreData+CloudKit
     private lazy var fetchRequest: NSFetchRequest<User> = {
@@ -34,45 +31,24 @@ class UserController: NSObject {
     }()
     
     //MARK: - CRUD funcs
-    func saveUserInfo(with username: String, and weight: Double, and height: Double) {
-        let newUser = User(username: username, weight: weight, height: height, context: CoreDataManager.managedContext)
+    func saveUserInfoWith(username: String, weight: Double, height: Double, prifileImage: UIImage?) {
+        let newUser = User(username: username, weight: weight, height: height, prifileImage: prifileImage, context: CoreDataManager.managedContext)
         self.user = newUser
         CoreDataManager.shared.saveContext()
     }
     
-    func update() {}
-    func delete() {}
-    
-    //MARK: - Helper Methods for SOT
-    func add(newWorkout: Workout) {
-        workouts.append(newWorkout)
-    }
-    
-    func add(newExercise: Exercise) {
-        exercises.append(newExercise)
-    }
-    
-    func add(newExerciseSets: ExerciseSet) {
-        exerciseSets.append(newExerciseSets)
-    }
-    
-    //MARK: - Helper Methods for CoreData
+    //MARK: - Helper Methods
     func fetchUserData() {
         do {
             try fetchedResultsController.performFetch()
         } catch {
             print("Error in \(#function) : \(error.localizedDescription) \n--\n \(error)")
         }
-    }
-    
-    func fetchUser() {
         let fetchedUserObjects = fetchedResultsController.fetchedObjects ?? []
         guard let user = user,
               let index = fetchedUserObjects.firstIndex(of: user)
         else { return }
-        
         let fetchedUser = fetchedUserObjects[index]
-        
         self.user = fetchedUser
     }
     

@@ -25,5 +25,9 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow &quot;GymNote&quot; to access your photos to set up a profile image. </string>
+	<key>NSCameraUsageDescription</key>
+	<string>Please allow &quot;GymNote&quot; to access your camera to take a profile image. </string>
 </dict>
 </plist>

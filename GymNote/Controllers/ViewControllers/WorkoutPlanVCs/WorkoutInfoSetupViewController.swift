@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstWorkoutTitleAndDaySetupViewController: UIViewController {
+class WorkoutInfoSetupViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var workoutTitleTextField: UITextField!
@@ -15,7 +15,6 @@ class FirstWorkoutTitleAndDaySetupViewController: UIViewController {
     @IBOutlet weak var howOftenRepeatWorkoutButton: UIButton!
     
     //MARK: - Properties
-    var workout: Workout?
     
     //MARK: - Lifecycles
     override func viewDidLoad() {
@@ -41,27 +40,18 @@ class FirstWorkoutTitleAndDaySetupViewController: UIViewController {
     func setupHowOftenRepeatWorkoutButton() {
         let repeatDaily = UIAction(title: WorkoutConstants.repeatDaily, image: nil) { _ in
             self.howOftenRepeatWorkoutButton.setTitle(WorkoutConstants.repeatDaily, for: .normal)
-            print("Button Title: \(self.howOftenRepeatWorkoutButton.titleLabel?.text ?? "")")
         }
-        
         let repeatWeekly = UIAction(title: WorkoutConstants.repeatWeekly, image: nil) { _ in
             self.howOftenRepeatWorkoutButton.setTitle(WorkoutConstants.repeatWeekly, for: .normal)
-            print("Button Title: \(self.howOftenRepeatWorkoutButton.titleLabel?.text ?? "")")
         }
-        
         let repeatEveryOtherWeek = UIAction(title: WorkoutConstants.repeatEveryOtherWeek, image: nil) { _ in
             self.howOftenRepeatWorkoutButton.setTitle(WorkoutConstants.repeatEveryOtherWeek, for: .normal)
-            print("Button Title: \(self.howOftenRepeatWorkoutButton.titleLabel?.text ?? "")")
         }
-        
         let repeatEveryMonth = UIAction(title: WorkoutConstants.repeatEveryMonth, image: nil) { _ in
             self.howOftenRepeatWorkoutButton.setTitle(WorkoutConstants.repeatEveryMonth, for: .normal)
-            print("Button Title: \(self.howOftenRepeatWorkoutButton.titleLabel?.text ?? "")")
         }
-        
         let neverRepeat = UIAction(title: WorkoutConstants.neverRepeat, image: nil) { _ in
             self.howOftenRepeatWorkoutButton.setTitle(WorkoutConstants.neverRepeat, for: .normal)
-            print("Button Title: \(self.howOftenRepeatWorkoutButton.titleLabel?.text ?? "")")
         }
         
         let menu = UIMenu(title: "Repeat Menu", image: nil, identifier: nil,
@@ -76,9 +66,9 @@ class FirstWorkoutTitleAndDaySetupViewController: UIViewController {
     
     // MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == StoryboardConstants.segueToFirstWorkoutSetupVC {
+        if identifier == StoryboardConstants.segueToExerciseListVC {
             if workoutTitleTextField.text == "" {
-                AlertManager.showWorkoutTitleEmptyAlert(on: self)
+                AlertManager.showTitleEmptyAlert(on: self, target: "Workout")
                 return false
             }
             
@@ -92,8 +82,8 @@ class FirstWorkoutTitleAndDaySetupViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == StoryboardConstants.segueToFirstWorkoutSetupVC {
-            guard let destination = segue.destination as? FirstWorkoutSetupViewController else { return }
+        if segue.identifier == StoryboardConstants.segueToExerciseListVC {
+            guard let destination = segue.destination as? ExerciseListViewController else { return }
             
             guard UserController.shared.user != nil,
                   let workoutTitle = workoutTitleTextField.text,
@@ -110,7 +100,7 @@ class FirstWorkoutTitleAndDaySetupViewController: UIViewController {
 
 }//End of class
 
-extension FirstWorkoutTitleAndDaySetupViewController: UITextFieldDelegate {
+extension WorkoutInfoSetupViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
