@@ -52,6 +52,7 @@
 		C98FC1712830A76D00FF504A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98FC1702830A76D00FF504A /* CloudKit.framework */; };
 		C98FC173283105A100FF504A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC172283105A100FF504A /* AlertManager.swift */; };
 		C98FC1752831ED2B00FF504A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC1742831ED2B00FF504A /* Test.swift */; };
+		C9935F94283A227B00067032 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9935F93283A227B00067032 /* HomeViewController.swift */; };
 		C9F603C5282EEAD0003DAE47 /* CoreDataMaanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */; };
 		C9F603C7282EEE8B003DAE47 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F603C6282EEE8B003DAE47 /* Onboarding.storyboard */; };
 		C9F603CA282EEF18003DAE47 /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */; };
@@ -151,6 +152,7 @@
 		C98FC1702830A76D00FF504A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		C98FC172283105A100FF504A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		C98FC1742831ED2B00FF504A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		C9935F93283A227B00067032 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMaanger.swift; sourceTree = "<group>"; };
 		C9F603C6282EEE8B003DAE47 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		C9935F6D283A0FEA00067032 /* HomeVCs */ = {
 			isa = PBXGroup;
 			children = (
+				C9935F93283A227B00067032 /* HomeViewController.swift */,
 			);
 			path = HomeVCs;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				C921EE51283625ED0064DD7C /* ExerciseSet+Convenience.swift in Sources */,
 				C91740D52838D245004E6EC2 /* User+CoreDataProperties.swift in Sources */,
 				C91740D12838A5FF004E6EC2 /* Workout+Convenience.swift in Sources */,
+				C9935F94283A227B00067032 /* HomeViewController.swift in Sources */,
 				C9343B75282CC4E5008B5DF4 /* UserController.swift in Sources */,
 				C9185E8F2832DE0A004759CC /* ExerciseListViewController.swift in Sources */,
 				C91740C728380E69004E6EC2 /* UserConstants.swift in Sources */,

@@ -18,6 +18,7 @@ struct StoryboardConstants {
     static let workoutSetupStoryboard = "WorkoutSetup"
     static let isOnboardedKey = "isOnboading"
     static let workoutSetupNavController = "workoutSetupNavController"
+    static let mainStoryboardTabController = "mainTabController"
     
     //Segue Related
     static let segueToImageSetupVC = "toImageSetupVC"

@@ -3,27 +3,76 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="C5o-LS-oJB">
             <objects>
-                <viewController id="0bM-Vo-z7e" customClass="TestViewController" customModule="GymNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainStroyboardKey" id="0bM-Vo-z7e" customClass="HomeViewController" customModule="GymNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I2A-Up-yDZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U4n-Mp-wSJ">
+                                <rect key="frame" x="124" y="121" width="166" height="171.5"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U4n-Mp-wSJ" secondAttribute="height" multiplier="1:1" id="i2c-O4-zbA"/>
+                                </constraints>
+                                <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="large"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htB-SM-Usf">
+                                <rect key="frame" x="124" y="124" width="166" height="165.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="profileImageButtonTapped:" destination="0bM-Vo-z7e" eventType="touchUpInside" id="zZs-D9-2t1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(username)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsI-O3-yVm">
+                                <rect key="frame" x="41.5" y="301.5" width="331" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Ske-19-2O0">
+                                <rect key="frame" x="31" y="363.5" width="352" height="336"/>
+                            </datePicker>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cL7-vy-JSf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ske-19-2O0" firstAttribute="top" secondItem="UsI-O3-yVm" secondAttribute="bottom" constant="26" id="4VU-aZ-nRT"/>
+                            <constraint firstItem="htB-SM-Usf" firstAttribute="width" secondItem="U4n-Mp-wSJ" secondAttribute="width" id="8oJ-PX-9vP"/>
+                            <constraint firstItem="htB-SM-Usf" firstAttribute="centerY" secondItem="U4n-Mp-wSJ" secondAttribute="centerY" id="BCe-DP-H4Z"/>
+                            <constraint firstItem="U4n-Mp-wSJ" firstAttribute="centerX" secondItem="cL7-vy-JSf" secondAttribute="centerX" id="Cxo-x5-BTb"/>
+                            <constraint firstItem="Ske-19-2O0" firstAttribute="centerX" secondItem="cL7-vy-JSf" secondAttribute="centerX" id="Gxk-fq-ISA"/>
+                            <constraint firstItem="UsI-O3-yVm" firstAttribute="width" secondItem="cL7-vy-JSf" secondAttribute="width" multiplier="0.8" id="IDN-nQ-9lp"/>
+                            <constraint firstItem="U4n-Mp-wSJ" firstAttribute="top" secondItem="cL7-vy-JSf" secondAttribute="top" constant="36" id="Jcr-A1-PuK"/>
+                            <constraint firstItem="UsI-O3-yVm" firstAttribute="centerX" secondItem="cL7-vy-JSf" secondAttribute="centerX" id="SrS-xw-cJn"/>
+                            <constraint firstItem="htB-SM-Usf" firstAttribute="centerX" secondItem="U4n-Mp-wSJ" secondAttribute="centerX" id="YzO-yk-uQi"/>
+                            <constraint firstItem="U4n-Mp-wSJ" firstAttribute="width" secondItem="cL7-vy-JSf" secondAttribute="width" multiplier="0.4" id="kYo-4M-jlN"/>
+                            <constraint firstItem="UsI-O3-yVm" firstAttribute="top" secondItem="U4n-Mp-wSJ" secondAttribute="bottom" constant="12" id="kc7-sM-FsJ"/>
+                            <constraint firstItem="htB-SM-Usf" firstAttribute="height" secondItem="U4n-Mp-wSJ" secondAttribute="height" id="kc8-dS-5M8"/>
+                            <constraint firstItem="Ske-19-2O0" firstAttribute="width" secondItem="cL7-vy-JSf" secondAttribute="width" multiplier="0.85" id="tOa-BP-1fV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gWb-gn-GoC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="profileImageButton" destination="htB-SM-Usf" id="A7m-5H-HPg"/>
+                        <outlet property="profileImageView" destination="U4n-Mp-wSJ" id="CGc-tJ-WP0"/>
+                        <outlet property="usernameLabel" destination="UsI-O3-yVm" id="AWF-Z8-2GD"/>
+                        <outlet property="workoutCalender" destination="Ske-19-2O0" id="m77-OD-2X2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPb-RK-9bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="183"/>
+            <point key="canvasLocation" x="2173.913043478261" y="182.8125"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7y0-tg-LEg">
@@ -60,7 +109,7 @@
         <!--View Controller-->
         <scene sceneID="pJP-ob-asd">
             <objects>
-                <viewController storyboardIdentifier="mainStroyboardKey" id="aIO-DB-Mnz" sceneMemberID="viewController">
+                <viewController id="aIO-DB-Mnz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gKA-RB-Ced">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +125,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ame-8n-MmZ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="h6H-Bc-vUJ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabController" automaticallyAdjustsScrollViewInsets="NO" id="h6H-Bc-vUJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="569-KG-r2R">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -134,6 +183,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
