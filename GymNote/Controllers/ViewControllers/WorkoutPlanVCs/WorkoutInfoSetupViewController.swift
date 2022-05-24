@@ -13,8 +13,11 @@ class WorkoutInfoSetupViewController: UIViewController {
     @IBOutlet weak var workoutTitleTextField: UITextField!
     @IBOutlet weak var workoutStartingDates: UIDatePicker!
     @IBOutlet weak var howOftenRepeatWorkoutButton: UIButton!
+    @IBOutlet weak var repeatLabel: UILabel!
     
     //MARK: - Properties
+    var chosenDate: Date?
+    var navPath: String?
     
     //MARK: - Lifecycles
     override func viewDidLoad() {
@@ -29,6 +32,7 @@ class WorkoutInfoSetupViewController: UIViewController {
     func setupView() {
         hideKeyboardFeatureSetup()
         setupHowOftenRepeatWorkoutButton()
+        setupWorkoutDate()
     }
     
     func hideKeyboardFeatureSetup() {
@@ -62,6 +66,13 @@ class WorkoutInfoSetupViewController: UIViewController {
         howOftenRepeatWorkoutButton.titleLabel?.numberOfLines = 0
         howOftenRepeatWorkoutButton.titleLabel?.adjustsFontSizeToFitWidth = true
         howOftenRepeatWorkoutButton.titleLabel?.lineBreakMode = .byWordWrapping
+        howOftenRepeatWorkoutButton.isHidden = true
+        repeatLabel.isHidden = true
+    }
+    
+    func setupWorkoutDate() {
+        guard let chosenDate = chosenDate else { return }
+        workoutStartingDates.date = chosenDate
     }
     
     // MARK: - Navigation
@@ -72,10 +83,10 @@ class WorkoutInfoSetupViewController: UIViewController {
                 return false
             }
             
-            if howOftenRepeatWorkoutButton.titleLabel!.text == WorkoutConstants.defaultRepeatValue {
-                AlertManager.showSetWorkoutRepeatValueAlert(on: self)
-                return false
-            }
+//            if howOftenRepeatWorkoutButton.titleLabel!.text == WorkoutConstants.defaultRepeatValue {
+//                AlertManager.showSetWorkoutRepeatValueAlert(on: self)
+//                return false
+//            }
         }
         
         return true
@@ -86,10 +97,10 @@ class WorkoutInfoSetupViewController: UIViewController {
             guard let destination = segue.destination as? ExerciseListViewController else { return }
             
             guard UserController.shared.user != nil,
-                  let workoutTitle = workoutTitleTextField.text,
-                  let repeatValue = howOftenRepeatWorkoutButton.titleLabel?.text
+                  let workoutTitle = workoutTitleTextField.text
             else { return }
             
+            let repeatValue = WorkoutConstants.neverRepeat
             let workoutStartingDates = workoutStartingDates.date
             
             destination.workoutTitle = workoutTitle

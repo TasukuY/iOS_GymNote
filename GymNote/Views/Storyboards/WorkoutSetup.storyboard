@@ -123,6 +123,7 @@
                     <navigationItem key="navigationItem" id="5U0-Cy-uiY"/>
                     <connections>
                         <outlet property="howOftenRepeatWorkoutButton" destination="ae2-zC-GWk" id="lS8-Wl-ezU"/>
+                        <outlet property="repeatLabel" destination="02M-MI-Juw" id="FVg-6r-zrt"/>
                         <outlet property="workoutStartingDates" destination="uXk-ds-zor" id="LBx-Et-D0O"/>
                         <outlet property="workoutTitleTextField" destination="Zu6-KG-Gso" id="Aoh-mN-Jmv"/>
                     </connections>
@@ -145,7 +146,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Next Dates)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-JD-6yh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Starting/Next Dates)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-JD-6yh">
                                 <rect key="frame" x="41.5" y="172" width="331" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -772,7 +773,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KDh-vy-a31"/>
+        <segue reference="VIj-YR-gmI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square" catalog="system" width="128" height="114"/>

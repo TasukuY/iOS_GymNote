@@ -32,6 +32,11 @@ class UserInfoConfirmationViewController: UIViewController {
         setupView()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupProfileImageView()
+    }
+    
     //MARK: - IBActions
     @IBAction func doneSetupButtonTapped(_ sender: Any) {
         setupUserInfo()
@@ -55,6 +60,7 @@ class UserInfoConfirmationViewController: UIViewController {
               let profileImage = profileImage
         else { return }
         UserController.shared.saveUserInfoWith(username: username, weight: weight, height: height, prifileImage: profileImage)
+        WeightRecordController.shared.addNewRecordWith(newWeight: weight)
     }
     
     func setupView() {
@@ -64,14 +70,11 @@ class UserInfoConfirmationViewController: UIViewController {
               let inches = inches,
               let profileImage = profileImage
         else { return }
-        DispatchQueue.main.async {
-            self.usernameLabel.text = username
-            self.weightLabel.text = String(weight)
-            self.feetLabel.text = String(feet)
-            self.inchesLabel.text = String(inches)
-            self.profileImageView.image = profileImage
-            self.setupProfileImageView()
-        }
+        self.usernameLabel.text = username
+        self.weightLabel.text = String(weight)
+        self.feetLabel.text = String(feet)
+        self.inchesLabel.text = String(inches)
+        self.profileImageView.image = profileImage
     }
     
     func setupProfileImageView() {

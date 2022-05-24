@@ -13,6 +13,8 @@ class ExerciseListViewController: UIViewController {
     @IBOutlet weak var workoutTitleLabel: UILabel!
     @IBOutlet weak var workoutDatesLabel: UILabel!
     @IBOutlet weak var exerciseListTableView: UITableView!
+    @IBOutlet weak var addNewExerciseButton: UIBarButtonItem!
+    @IBOutlet weak var addExistingExerciseButton: UIButton!
     
     //MARK: - Properties
     private let storyboardManager = StoryboardManager()
@@ -20,6 +22,7 @@ class ExerciseListViewController: UIViewController {
     var workoutTitle: String?
     var repeatValue: String?
     var workoutStartingDates: Date?
+    var navPath: String?
     
     //MARK: - Lifecycles
     override func viewDidLoad() {
@@ -34,12 +37,34 @@ class ExerciseListViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func doneButtonTapped(_ sender: Any) {
-        if UserController.shared.user != nil {
-            userIsOnboarded()
+        if navPath == nil {
+            //If it is onboarding + workoutsetup storyboards
+            if UserController.shared.user != nil {
+                userIsOnboarded()
+            } else {
+                AlertManager.showUserSetupError(on: self)
+            }
         } else {
-            AlertManager.showUserSetupError(on: self)
+            //if it is in the main storyboards
+            for vc in (self.navigationController?.viewControllers ?? []) {
+                //HomeVC NavPath
+                if vc is HomeViewController {
+                    if navPath == StoryboardConstants.navPathFromHomeVC {
+                        navigationController?.popToViewController(vc, animated: true)
+                        break
+                    }
+                //CalendarVC NavPath
+                } else if vc is DatesDetailsViewController {
+                    if navPath == StoryboardConstants.navPathFromCalendarVC {
+                        navigationController?.popToViewController(vc, animated: true)
+                        break
+                    }
+                }
+            }
         }
     }
+    
+    @IBAction func addExistingExerciseButtonTapped(_ sender: Any) {}
     
     //MARK: - Helper Methods
     func setupView() {
@@ -51,12 +76,15 @@ class ExerciseListViewController: UIViewController {
               let workoutStartingDates = workoutStartingDates,
               let user = UserController.shared.user
         else { return }
-        //Create a new Workout Object here -> to avoid racing condition
         self.workoutTitleLabel.text = workoutTitle
         self.workoutDatesLabel.text = workoutStartingDates.datesFormatForWorkout()
-        self.workout = Workout(title: workoutTitle, date: workoutStartingDates, user: user, repeatWorkout: repeatValue)
-        guard let workout = workout else { return }
-        WorkoutController.shared.saveWorkout(newWorkout: workout)
+        
+        if workout == nil {
+            //Create a new Workout Object here -> to avoid racing condition
+            self.workout = Workout(title: workoutTitle, date: workoutStartingDates, user: user, repeatWorkout: repeatValue)
+            guard let workout = workout else { return }
+            WorkoutController.shared.saveWorkout(newWorkout: workout)
+        }
     }
     
     func userIsOnboarded() {

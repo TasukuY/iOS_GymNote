@@ -75,7 +75,7 @@ class SetInfoSetupViewController: UIViewController {
         let setsToCheck = SetController.shared.sets.filter{ $0.exercise == exercise }
         
         for exerciseSet in setsToCheck {
-            if exerciseSet.setType == nil && exerciseSet.note == nil && exerciseSet.weight == 0 && exerciseSet.reps == 0 && exerciseSet.distance == 0 && exerciseSet.duration == 0 {
+            if exerciseSet.setType == "No Type" && exerciseSet.note == nil && exerciseSet.weight == 0 && exerciseSet.reps == 0 && exerciseSet.distance == 0 && exerciseSet.duration == 0 {
                 //if the set is an empty set, delete it
                 SetController.shared.delete(set: exerciseSet, from: exercise)
             }

@@ -17,4 +17,7 @@ struct WorkoutConstants {
     static let neverRepeat = "Never Repeat"
     static let defaultRepeatValue = "(How Often)"
     
+    //WorkoutCell
+    static let workoutCellIdentifier = "workoutCell"
+    
 }//End of struct

@@ -21,6 +21,10 @@
 		C9185E8F2832DE0A004759CC /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9185E8E2832DE0A004759CC /* ExerciseListViewController.swift */; };
 		C9185E932832DFF5004759CC /* WorkoutInfoSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9185E922832DFF5004759CC /* WorkoutInfoSetupViewController.swift */; };
 		C9185E952832E389004759CC /* WorkoutSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9185E942832E389004759CC /* WorkoutSetup.storyboard */; };
+		C91E5C1B283C2D28003ABFCD /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E5C1A283C2D28003ABFCD /* WorkoutTableViewCell.swift */; };
+		C91E5C1D283C5EA8003ABFCD /* WeightRecord+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E5C1C283C5EA8003ABFCD /* WeightRecord+Convenience.swift */; };
+		C91E5C1F283C5F44003ABFCD /* WeightRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E5C1E283C5F44003ABFCD /* WeightRecordController.swift */; };
+		C91E5C22283CA359003ABFCD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E5C21283CA359003ABFCD /* CalendarViewController.swift */; };
 		C921EE4728342A580064DD7C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE4628342A580064DD7C /* DateExtension.swift */; };
 		C921EE492834C3780064DD7C /* WorkoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE482834C3780064DD7C /* WorkoutConstants.swift */; };
 		C921EE4B2834CEA20064DD7C /* ExerciseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921EE4A2834CEA20064DD7C /* ExerciseConstants.swift */; };
@@ -53,6 +57,7 @@
 		C98FC173283105A100FF504A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC172283105A100FF504A /* AlertManager.swift */; };
 		C98FC1752831ED2B00FF504A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC1742831ED2B00FF504A /* Test.swift */; };
 		C9935F94283A227B00067032 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9935F93283A227B00067032 /* HomeViewController.swift */; };
+		C9D82401283B684000CEB060 /* DatesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D82400283B684000CEB060 /* DatesDetailsViewController.swift */; };
 		C9F603C5282EEAD0003DAE47 /* CoreDataMaanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */; };
 		C9F603C7282EEE8B003DAE47 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F603C6282EEE8B003DAE47 /* Onboarding.storyboard */; };
 		C9F603CA282EEF18003DAE47 /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */; };
@@ -116,6 +121,10 @@
 		C9185E8E2832DE0A004759CC /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		C9185E922832DFF5004759CC /* WorkoutInfoSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfoSetupViewController.swift; sourceTree = "<group>"; };
 		C9185E942832E389004759CC /* WorkoutSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutSetup.storyboard; sourceTree = "<group>"; };
+		C91E5C1A283C2D28003ABFCD /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		C91E5C1C283C5EA8003ABFCD /* WeightRecord+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightRecord+Convenience.swift"; sourceTree = "<group>"; };
+		C91E5C1E283C5F44003ABFCD /* WeightRecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightRecordController.swift; sourceTree = "<group>"; };
+		C91E5C21283CA359003ABFCD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C921EE4628342A580064DD7C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		C921EE482834C3780064DD7C /* WorkoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutConstants.swift; sourceTree = "<group>"; };
 		C921EE4A2834CEA20064DD7C /* ExerciseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseConstants.swift; sourceTree = "<group>"; };
@@ -153,6 +162,7 @@
 		C98FC172283105A100FF504A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		C98FC1742831ED2B00FF504A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		C9935F93283A227B00067032 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C9D82400283B684000CEB060 /* DatesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesDetailsViewController.swift; sourceTree = "<group>"; };
 		C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMaanger.swift; sourceTree = "<group>"; };
 		C9F603C6282EEE8B003DAE47 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
@@ -217,6 +227,23 @@
 				C91740B52836CBA5004E6EC2 /* SetCellVCs */,
 			);
 			path = WorkoutPlanVCs;
+			sourceTree = "<group>";
+		};
+		C91E5C19283C2CEA003ABFCD /* WorkoutCellVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C91E5C1A283C2D28003ABFCD /* WorkoutTableViewCell.swift */,
+			);
+			path = WorkoutCellVCs;
+			sourceTree = "<group>";
+		};
+		C91E5C20283CA324003ABFCD /* CalendarVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C91E5C21283CA359003ABFCD /* CalendarViewController.swift */,
+				C9D82400283B684000CEB060 /* DatesDetailsViewController.swift */,
+			);
+			path = CalendarVCs;
 			sourceTree = "<group>";
 		};
 		C9343B09282B0A33008B5DF4 = {
@@ -362,6 +389,7 @@
 				C91740D02838A5FF004E6EC2 /* Workout+Convenience.swift */,
 				C921EE4C2834CF160064DD7C /* Exercise+Convenience.swift */,
 				C921EE50283625ED0064DD7C /* ExerciseSet+Convenience.swift */,
+				C91E5C1C283C5EA8003ABFCD /* WeightRecord+Convenience.swift */,
 			);
 			path = NSManagedObjectSubclasses;
 			sourceTree = "<group>";
@@ -383,6 +411,7 @@
 				C98FC144282F144B00FF504A /* WorkoutController.swift */,
 				C98FC146282F145B00FF504A /* ExerciseController.swift */,
 				C98FC148282F146400FF504A /* SetController.swift */,
+				C91E5C1E283C5F44003ABFCD /* WeightRecordController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -401,8 +430,9 @@
 			isa = PBXGroup;
 			children = (
 				C9935F6D283A0FEA00067032 /* HomeVCs */,
+				C91E5C20283CA324003ABFCD /* CalendarVCs */,
+				C91E5C19283C2CEA003ABFCD /* WorkoutCellVCs */,
 				C9935F6E283A0FF500067032 /* ProgressVCs */,
-				C9935F6F283A0FFC00067032 /* CalenderVCs */,
 				C9935F70283A100300067032 /* SettingVCs */,
 			);
 			path = MainStroyboardVCs;
@@ -429,13 +459,6 @@
 			children = (
 			);
 			path = ProgressVCs;
-			sourceTree = "<group>";
-		};
-		C9935F6F283A0FFC00067032 /* CalenderVCs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CalenderVCs;
 			sourceTree = "<group>";
 		};
 		C9935F70283A100300067032 /* SettingVCs */ = {
@@ -597,12 +620,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91E5C22283CA359003ABFCD /* CalendarViewController.swift in Sources */,
 				C9F603CC282EF0D7003DAE47 /* StoryboardManager.swift in Sources */,
 				C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */,
 				C921EE51283625ED0064DD7C /* ExerciseSet+Convenience.swift in Sources */,
 				C91740D52838D245004E6EC2 /* User+CoreDataProperties.swift in Sources */,
 				C91740D12838A5FF004E6EC2 /* Workout+Convenience.swift in Sources */,
 				C9935F94283A227B00067032 /* HomeViewController.swift in Sources */,
+				C9D82401283B684000CEB060 /* DatesDetailsViewController.swift in Sources */,
 				C9343B75282CC4E5008B5DF4 /* UserController.swift in Sources */,
 				C9185E8F2832DE0A004759CC /* ExerciseListViewController.swift in Sources */,
 				C91740C728380E69004E6EC2 /* UserConstants.swift in Sources */,
@@ -614,6 +639,8 @@
 				C98FC147282F145B00FF504A /* ExerciseController.swift in Sources */,
 				C91740B72836CCF3004E6EC2 /* SetInfoSetupViewController.swift in Sources */,
 				C98FC145282F144B00FF504A /* WorkoutController.swift in Sources */,
+				C91E5C1F283C5F44003ABFCD /* WeightRecordController.swift in Sources */,
+				C91E5C1D283C5EA8003ABFCD /* WeightRecord+Convenience.swift in Sources */,
 				C98FC173283105A100FF504A /* AlertManager.swift in Sources */,
 				C9F603D0282EF560003DAE47 /* UserInfoConfirmationViewController.swift in Sources */,
 				C91740BB2836D28B004E6EC2 /* CardioSetsTableViewCell.swift in Sources */,
@@ -626,6 +653,7 @@
 				C91740B92836D090004E6EC2 /* ExerciseInfoSetupViewController.swift in Sources */,
 				C921EE4728342A580064DD7C /* DateExtension.swift in Sources */,
 				C9343B5B282B6A72008B5DF4 /* GymNote.xcdatamodeld in Sources */,
+				C91E5C1B283C2D28003ABFCD /* WorkoutTableViewCell.swift in Sources */,
 				C91740BD2836D2A2004E6EC2 /* WeightLiftingSetsTableViewCell.swift in Sources */,
 				C921EE4F283517A00064DD7C /* ExerciseTableViewCell.swift in Sources */,
 				C98FC15B28307AA500FF504A /* StringExtension.swift in Sources */,

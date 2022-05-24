@@ -27,5 +27,16 @@ struct StoryboardConstants {
     static let segueToExerciseSetupVC = "toExerciseSetupVC"
     static let segueToSetsVC = "toSetsVC"
     static let segueToExerciseDetails = "toExerciseDetails"
+    static let segueToDatesDetailVC = "toDatesDetailVC"
+    static let segueToCreateNewWorkoutVCFromHomeVC = "toCreateNewWorkoutVCFromHomeVC"
+    static let segueToCreateNewWorkoutVCFromCalendarVC = "toCreateNewWorkoutVCFromCalendarVC"
+    static let segueToExerciseListVCFromHomeVC = "toExerciseListVCFromHomeVC"
+    static let segueToExerciseListVCFromCalendarVC = "toExerciseListVCFromCalendarVC"
+    static let segueToExerciseListVCFromHomeVCToSetUPExistingWorkout = "toExerciseListVCFromHomeVCToSetUPExistingWorkout"
+    static let segueToExerciseListVCFromCalendarVCToSetUPExistingWorkout = "toExerciseListVCFromCalendarVCToSetUPExistingWorkout"
+    
+    //Navigation Controller Related
+    static let navPathFromHomeVC = "HomeVC"
+    static let navPathFromCalendarVC = "CalendarVC"
     
 }//End of struct

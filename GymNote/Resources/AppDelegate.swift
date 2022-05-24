@@ -11,22 +11,20 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var storyboardManager = StoryboardManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        //fetch User, Workouts, Exercises, and Sets and update the SoT
+        UserController.shared.fetchUserData()
+        WorkoutController.shared.fetchWorkoutData()
+        ExerciseController.shared.fetchExerciseData()
+        SetController.shared.fetchSetData()
+        WeightRecordController.shared.fetchWeightRecordData()
         
-//        UserController.shared.saveUserInfo(with: "Test User", and: 200.0, and: 5.7)
-//        guard let user = UserController.shared.user else { return false}
-//        let testWorkout = Workout(title: "Test Workout", date: Date(), user: user, repeatWorkout: WorkoutConstants.repeatDaily)
-//        guard let workoutTitle = testWorkout.title,
-//              let workoutDate = testWorkout.date
-//        else { return false }
-//        WorkoutController.saveWorkout(with: workoutTitle, date: workoutDate, repeatValue: testWorkout.repeatWorkout ?? "Daily")
-//        let exercise1 = Exercise(title: "Test Exercise1", exerciseType: ExerciseConstants.exerciseTypeWeightLifting, workout: testWorkout)
-//        guard let exerciseTitle = exercise1.title,
-//              let exerciseType = exercise1.exerciseType
-//        else { return false }
-//        ExerciseController.saveExercise(with: exerciseTitle, exerciseType: exerciseType, workout: testWorkout)
-//        let set1 = ExerciseSet(exercise: exercise1, setType: exerciseType, weight: 315, reps: 5, distance: nil, duration: nil, note: nil)
-//        SetController.saveSets(for: exercise1, setType: exerciseType, weight: 315, reps: 5, distance: nil, duration: nil, note: nil)
+        if UserController.shared.user != nil {
+            UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
+        }
         
         return true
     }

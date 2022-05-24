@@ -17,6 +17,7 @@ class SetController: NSObject {
     private lazy var fetchRequest: NSFetchRequest<ExerciseSet> = {
         let request = NSFetchRequest<ExerciseSet>(entityName: "ExerciseSet")
         request.predicate = NSPredicate(value: true)
+        request.sortDescriptors = [NSSortDescriptor(key: "setType", ascending: true)]
         return request
     }()
     
@@ -34,7 +35,7 @@ class SetController: NSObject {
         //adding the new set to the array of exercise sets in the Exercise Core Data class
         exercise.addToExerciseSets(newSet)
         //adding the new set to the SOT array
-        sets.append(newSet)
+        sets.insert(newSet, at: 0)
         CoreDataManager.shared.saveContext()
     }
     

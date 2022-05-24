@@ -18,11 +18,11 @@ class AlertManager {
     }
     
     static func showIncompleteFormAlert(on vc: UIViewController) {
-        showBasicAlert(on: vc, with: "Incomplete Form", message: "Please fill out all fields in the form")
+        showBasicAlert(on: vc, with: "Incomplete Form", message: "Please fill out all fields in the form.")
     }
     
     static func showIncorrectInputTypeAlert(on vc: UIViewController, correctValue: String, targetFields: String) {
-        showBasicAlert(on: vc, with: "Invalid Input Type", message: "Please type \(correctValue) in \(targetFields)")
+        showBasicAlert(on: vc, with: "Invalid Input Type", message: "Please type \(correctValue) in \(targetFields).")
     }
     
     static func showUserSetupError(on vc: UIViewController) {
@@ -30,15 +30,19 @@ class AlertManager {
     }
     
     static func showTitleEmptyAlert(on vc: UIViewController, target: String) {
-        showBasicAlert(on: vc, with: "\(target) title is Empty", message: "Please set the title for this \(target)")
+        showBasicAlert(on: vc, with: "\(target) title is Empty", message: "Please set the title for this \(target).")
     }
     
     static func showSetWorkoutRepeatValueAlert(on vc: UIViewController) {
-        showBasicAlert(on: vc, with: "Repeat Value is not set", message: "Please set the Repeat Value for this Workout")
+        showBasicAlert(on: vc, with: "Repeat Value is not set", message: "Please set the Repeat Value for this Workout.")
     }
     
     static func showExerciseTypeError(on vc: UIViewController) {
-        showBasicAlert(on: vc, with: "Exercise Type is not set", message: "Please set the Type of the Exercise")
+        showBasicAlert(on: vc, with: "Exercise Type is not set", message: "Please set the Type of the Exercise.")
+    }
+    
+    static func showWeightRecordIsEmpty(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Weihgt Value is Empty", message: "Please type the weight record for Today before save it.")
     }
     
 }//End of class

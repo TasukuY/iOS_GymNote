@@ -18,6 +18,7 @@ class WorkoutController: NSObject {
     private lazy var fetchRequest: NSFetchRequest<Workout> = {
         let request = NSFetchRequest<Workout>(entityName: "Workout")
         request.predicate = NSPredicate(value: true)
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         return request
     }()
     
@@ -38,6 +39,38 @@ class WorkoutController: NSObject {
         user.addToWorkouts(newWorkout)
         //adding the new workout to the SOT array
         workouts.append(newWorkout)
+        CoreDataManager.shared.saveContext()
+    }
+    
+    func update(workout: Workout, title: String?, date: Date?, repeatWorkout: String?) {
+        if let newTitle = title {
+            workout.title = newTitle
+        }
+        if let newDate = date {
+            workout.date = newDate
+        }
+        if let newRepeatWorkout = repeatWorkout {
+            workout.repeatWorkout = newRepeatWorkout
+        }
+        CoreDataManager.shared.saveContext()
+    }
+    
+    func workoutIsCompleted(workout: Workout) {
+        workout.isCompleted = true
+    }
+    
+    func delete(workout: Workout, from user: User) {
+        guard let index = workouts.firstIndex(of: workout) else { return }
+        //delete all the exercises belongs to this workout
+        let exercisesToDelete = ExerciseController.shared.exercises.filter{ $0.workout == workout }
+        
+        for exercise in exercisesToDelete {
+            ExerciseController.shared.delete(exercise: exercise, from: workout)
+        }
+        //delete the workout
+        workouts.remove(at: index)
+        user.removeFromWorkouts(workout)
+        CoreDataManager.managedContext.delete(workout)
         CoreDataManager.shared.saveContext()
     }
     

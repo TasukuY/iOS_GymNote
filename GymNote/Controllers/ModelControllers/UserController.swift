@@ -18,6 +18,7 @@ class UserController: NSObject {
     private lazy var fetchRequest: NSFetchRequest<User> = {
         let request = NSFetchRequest<User>(entityName: "User")
         request.predicate = NSPredicate(value: true)
+        request.sortDescriptors = [NSSortDescriptor(key: "username", ascending: true)]
         return request
     }()
     
@@ -37,6 +38,37 @@ class UserController: NSObject {
         CoreDataManager.shared.saveContext()
     }
     
+    func update(user: User, username: String?, weight: Double?, height: Double?, profileImage: UIImage?) {
+        if let newUsername = username {
+            user.username = newUsername
+        }
+        if let newWeight = weight {
+            user.weight = newWeight
+        }
+        if let newHeight = height {
+            user.height = newHeight
+        }
+        if let newProfileImage = profileImage {
+            user.profileImage = newProfileImage
+        }
+
+        CoreDataManager.shared.saveContext()
+    }
+    
+    func delete(user: User) {
+        //reset the UserDefaults to false
+        UserDefaults.standard.set(false, forKey: StoryboardConstants.isOnboardedKey)
+        //delete all workouts, exercises, and sets here
+        let workoutsToDelete = WorkoutController.shared.workouts
+        for workout in workoutsToDelete {
+            WorkoutController.shared.delete(workout: workout, from: user)
+        }
+        //delete the user
+        self.user = nil
+        CoreDataManager.managedContext.delete(user)
+        CoreDataManager.shared.saveContext()
+    }
+    
     //MARK: - Helper Methods
     func fetchUserData() {
         do {
@@ -45,11 +77,11 @@ class UserController: NSObject {
             print("Error in \(#function) : \(error.localizedDescription) \n--\n \(error)")
         }
         let fetchedUserObjects = fetchedResultsController.fetchedObjects ?? []
-        guard let user = user,
-              let index = fetchedUserObjects.firstIndex(of: user)
-        else { return }
-        let fetchedUser = fetchedUserObjects[index]
-        self.user = fetchedUser
+        
+        if fetchedUserObjects != [] {
+            let fetchedUser = fetchedUserObjects.first
+            self.user = fetchedUser
+        }
     }
     
 }//End of class

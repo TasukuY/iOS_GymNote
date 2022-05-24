@@ -25,6 +25,10 @@ class UserImageSetupViewController: UIViewController {
     //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupView()
     }
     
@@ -36,7 +40,7 @@ class UserImageSetupViewController: UIViewController {
     //MARK: - Helper Methods
     func setupView() {
         profileImageView.layer.borderWidth = 1.0
-        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.masksToBounds = true
         profileImageView.layer.borderColor = UIColor.label.cgColor
         profileImageView.layer.cornerRadius = profileImageView.frame.size.height / 2
         profileImageView.clipsToBounds = true
