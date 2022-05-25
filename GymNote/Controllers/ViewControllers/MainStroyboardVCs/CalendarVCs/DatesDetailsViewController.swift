@@ -37,11 +37,12 @@ class DatesDetailsViewController: UIViewController {
         setupAddExistingWorkoutButton()
         setupNoWorkoutLabel()
         setupWorkoutSectionLabel()
+        hideButtonsForPastDates()
     }
     
     func setupWorkoutSectionLabel() {
         guard let chosenDate = chosenDate else { return }
-        workoutSectionLabel.text = "\(chosenDate.datesFormatForWorkout())'s Workout"
+        workoutSectionLabel.text = "\(chosenDate.datesFormatForWorkout())"
         workoutSectionLabel.numberOfLines = 0
         workoutSectionLabel.adjustsFontSizeToFitWidth = true
         workoutSectionLabel.lineBreakMode = .byWordWrapping
@@ -99,6 +100,18 @@ class DatesDetailsViewController: UIViewController {
         addExistingWorkoutButton.titleLabel?.numberOfLines = 0
         addExistingWorkoutButton.titleLabel?.adjustsFontSizeToFitWidth = true
         addExistingWorkoutButton.titleLabel?.lineBreakMode = .byWordWrapping
+    }
+    
+    func hideButtonsForPastDates() {
+        let today = Date()
+        guard let chosenDate = chosenDate,
+              !Calendar.current.isDateInToday(chosenDate)
+        else { return }
+        
+        if chosenDate < today {
+            addNewWorkoutButton.isHidden = true
+            addExistingWorkoutButton.isHidden = true
+        }
     }
     
     // MARK: - Navigation

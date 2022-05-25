@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "rskimagecropper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ruslanskorb/RSKImageCropper.git",
+      "state" : {
+        "revision" : "a21b28b90c08d3be9f392b36e872514cb74888a0",
+        "version" : "3.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}

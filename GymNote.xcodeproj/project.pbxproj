@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04569E28AB7F8ED127035353 /* Pods_GymNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45512C8A801A6393BE02E22E /* Pods_GymNote.framework */; };
+		121CBF89B48C6A7FA22F7A4C /* Pods_GymNote_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37078D5F07B7B2DE56CA7E65 /* Pods_GymNote_WatchKit_Extension.framework */; };
+		A6685C8FE0DEBC94DB4B4081 /* Pods_GymNote_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499C041F73FED242E9AF57D5 /* Pods_GymNote_WatchKit_App.framework */; };
 		C91740B72836CCF3004E6EC2 /* SetInfoSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91740B62836CCF3004E6EC2 /* SetInfoSetupViewController.swift */; };
 		C91740B92836D090004E6EC2 /* ExerciseInfoSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91740B82836D090004E6EC2 /* ExerciseInfoSetupViewController.swift */; };
 		C91740BB2836D28B004E6EC2 /* CardioSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91740BA2836D28B004E6EC2 /* CardioSetsTableViewCell.swift */; };
@@ -48,6 +51,7 @@
 		C9343B5B282B6A72008B5DF4 /* GymNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9343B59282B6A72008B5DF4 /* GymNote.xcdatamodeld */; };
 		C9343B75282CC4E5008B5DF4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B74282CC4E5008B5DF4 /* UserController.swift */; };
 		C9343B8D282CE80D008B5DF4 /* UserInfoSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B8C282CE80D008B5DF4 /* UserInfoSetupViewController.swift */; };
+		C96FF9FB283EF40B004774CB /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96FF9FA283EF40B004774CB /* ProgressViewController.swift */; };
 		C9859E0D283DBC2A00BCEA15 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9859E0C283DBC2A00BCEA15 /* SettingViewController.swift */; };
 		C98FC145282F144B00FF504A /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC144282F144B00FF504A /* WorkoutController.swift */; };
 		C98FC147282F145B00FF504A /* ExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC146282F145B00FF504A /* ExerciseController.swift */; };
@@ -109,6 +113,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37078D5F07B7B2DE56CA7E65 /* Pods_GymNote_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymNote_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD4A07E566118A70EDB964A /* Pods-GymNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymNote.debug.xcconfig"; path = "Target Support Files/Pods-GymNote/Pods-GymNote.debug.xcconfig"; sourceTree = "<group>"; };
+		45512C8A801A6393BE02E22E /* Pods_GymNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		499C041F73FED242E9AF57D5 /* Pods_GymNote_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymNote_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF9FD3F1102A4F3289F5039 /* Pods-GymNote WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymNote WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-GymNote WatchKit App/Pods-GymNote WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		7A80471D44E44EFA7DA1C695 /* Pods-GymNote WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymNote WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-GymNote WatchKit App/Pods-GymNote WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		7B405B382F3119E9F09FD249 /* Pods-GymNote WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymNote WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-GymNote WatchKit Extension/Pods-GymNote WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		9F5A23B325A2A5DA14F62323 /* Pods-GymNote WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymNote WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-GymNote WatchKit Extension/Pods-GymNote WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		C91740B62836CCF3004E6EC2 /* SetInfoSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInfoSetupViewController.swift; sourceTree = "<group>"; };
 		C91740B82836D090004E6EC2 /* ExerciseInfoSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoSetupViewController.swift; sourceTree = "<group>"; };
 		C91740BA2836D28B004E6EC2 /* CardioSetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioSetsTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +165,7 @@
 		C9343B5A282B6A72008B5DF4 /* GymNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GymNote.xcdatamodel; sourceTree = "<group>"; };
 		C9343B74282CC4E5008B5DF4 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		C9343B8C282CE80D008B5DF4 /* UserInfoSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSetupViewController.swift; sourceTree = "<group>"; };
+		C96FF9FA283EF40B004774CB /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		C9859E0C283DBC2A00BCEA15 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C98FC144282F144B00FF504A /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 		C98FC146282F145B00FF504A /* ExerciseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseController.swift; sourceTree = "<group>"; };
@@ -170,6 +183,7 @@
 		C9F603C9282EEF18003DAE47 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
 		C9F603CB282EF0D7003DAE47 /* StoryboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
 		C9F603CF282EF560003DAE47 /* UserInfoConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoConfirmationViewController.swift; sourceTree = "<group>"; };
+		CE9DBDF00B0AC975B1386178 /* Pods-GymNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymNote.release.xcconfig"; path = "Target Support Files/Pods-GymNote/Pods-GymNote.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6685C8FE0DEBC94DB4B4081 /* Pods_GymNote_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +201,7 @@
 			files = (
 				C98FC1712830A76D00FF504A /* CloudKit.framework in Frameworks */,
 				C91740CA283824E2004E6EC2 /* RSKImageCropper in Frameworks */,
+				04569E28AB7F8ED127035353 /* Pods_GymNote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121CBF89B48C6A7FA22F7A4C /* Pods_GymNote_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +273,7 @@
 				C9343B38282B0A35008B5DF4 /* GymNote WatchKit Extension */,
 				C9343B13282B0A33008B5DF4 /* Products */,
 				C98FC16F2830A76D00FF504A /* Frameworks */,
+				D571B36B2DA71A1DE6E15515 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -444,6 +462,9 @@
 			isa = PBXGroup;
 			children = (
 				C98FC1702830A76D00FF504A /* CloudKit.framework */,
+				45512C8A801A6393BE02E22E /* Pods_GymNote.framework */,
+				499C041F73FED242E9AF57D5 /* Pods_GymNote_WatchKit_App.framework */,
+				37078D5F07B7B2DE56CA7E65 /* Pods_GymNote_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -459,6 +480,7 @@
 		C9935F6E283A0FF500067032 /* ProgressVCs */ = {
 			isa = PBXGroup;
 			children = (
+				C96FF9FA283EF40B004774CB /* ProgressViewController.swift */,
 			);
 			path = ProgressVCs;
 			sourceTree = "<group>";
@@ -482,6 +504,19 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		D571B36B2DA71A1DE6E15515 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4A07E566118A70EDB964A /* Pods-GymNote.debug.xcconfig */,
+				CE9DBDF00B0AC975B1386178 /* Pods-GymNote.release.xcconfig */,
+				7A80471D44E44EFA7DA1C695 /* Pods-GymNote WatchKit App.debug.xcconfig */,
+				5DF9FD3F1102A4F3289F5039 /* Pods-GymNote WatchKit App.release.xcconfig */,
+				9F5A23B325A2A5DA14F62323 /* Pods-GymNote WatchKit Extension.debug.xcconfig */,
+				7B405B382F3119E9F09FD249 /* Pods-GymNote WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,10 +524,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9343B4F282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote" */;
 			buildPhases = (
+				1B1C61D76465C896577B64DD /* [CP] Check Pods Manifest.lock */,
 				C9343B0E282B0A33008B5DF4 /* Sources */,
 				C9343B0F282B0A33008B5DF4 /* Frameworks */,
 				C9343B10282B0A33008B5DF4 /* Resources */,
 				C9343B4E282B0A36008B5DF4 /* Embed Watch Content */,
+				389BBF4695C5C8D4EB37B901 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -511,6 +548,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9343B4B282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote WatchKit App" */;
 			buildPhases = (
+				5FC0C91568A8B7C312586373 /* [CP] Check Pods Manifest.lock */,
 				C9343B24282B0A34008B5DF4 /* Resources */,
 				C9343B4A282B0A36008B5DF4 /* Embed App Extensions */,
 				9B72BBBC5C424EAF753C78ED /* Frameworks */,
@@ -529,6 +567,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9343B47282B0A36008B5DF4 /* Build configuration list for PBXNativeTarget "GymNote WatchKit Extension" */;
 			buildPhases = (
+				A7916627FB6FCEB5240C09A9 /* [CP] Check Pods Manifest.lock */,
 				C9343B30282B0A35008B5DF4 /* Sources */,
 				C9343B31282B0A35008B5DF4 /* Frameworks */,
 				C9343B32282B0A35008B5DF4 /* Resources */,
@@ -618,6 +657,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B1C61D76465C896577B64DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymNote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		389BBF4695C5C8D4EB37B901 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymNote/Pods-GymNote-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymNote/Pods-GymNote-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GymNote/Pods-GymNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FC0C91568A8B7C312586373 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymNote WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7916627FB6FCEB5240C09A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymNote WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C9343B0E282B0A33008B5DF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -626,6 +751,7 @@
 				C91E5C22283CA359003ABFCD /* CalendarViewController.swift in Sources */,
 				C9F603CC282EF0D7003DAE47 /* StoryboardManager.swift in Sources */,
 				C9343B16282B0A34008B5DF4 /* AppDelegate.swift in Sources */,
+				C96FF9FB283EF40B004774CB /* ProgressViewController.swift in Sources */,
 				C921EE51283625ED0064DD7C /* ExerciseSet+Convenience.swift in Sources */,
 				C91740D52838D245004E6EC2 /* User+CoreDataProperties.swift in Sources */,
 				C91740D12838A5FF004E6EC2 /* Workout+Convenience.swift in Sources */,
@@ -832,6 +958,7 @@
 		};
 		C9343B48282B0A36008B5DF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F5A23B325A2A5DA14F62323 /* Pods-GymNote WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -863,6 +990,7 @@
 		};
 		C9343B49282B0A36008B5DF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B405B382F3119E9F09FD249 /* Pods-GymNote WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -895,6 +1023,7 @@
 		};
 		C9343B4C282B0A36008B5DF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A80471D44E44EFA7DA1C695 /* Pods-GymNote WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -921,6 +1050,7 @@
 		};
 		C9343B4D282B0A36008B5DF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DF9FD3F1102A4F3289F5039 /* Pods-GymNote WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -948,6 +1078,7 @@
 		};
 		C9343B50282B0A36008B5DF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD4A07E566118A70EDB964A /* Pods-GymNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -979,6 +1110,7 @@
 		};
 		C9343B51282B0A36008B5DF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE9DBDF00B0AC975B1386178 /* Pods-GymNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
