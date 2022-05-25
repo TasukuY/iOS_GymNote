@@ -19,6 +19,7 @@ class WeightLiftingSetsTableViewCell: UITableViewCell {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var isCompletedButton: UIButton!
+    @IBOutlet weak var setCompletedStackView: UIStackView!
     
     //MARK: - Properties
     weak var delegate: WeightLiftingSetUpdatedDelegate?
@@ -42,7 +43,7 @@ class WeightLiftingSetsTableViewCell: UITableViewCell {
     }
     
     //MARK: - Helper Methods
-    func updateViews(with set: ExerciseSet) {
+    func updateViews(with set: ExerciseSet, isWorkoutStarted: Bool, isWorkoutFinished: Bool) {
         if set.weight != 0 && set.reps != 0 && set.setType != nil {
             setTypeButton.setTitle(set.setType, for: .normal)
             weightTextField.text = String(set.weight)
@@ -52,6 +53,17 @@ class WeightLiftingSetsTableViewCell: UITableViewCell {
             setTypeButton.setTitle(ExerciseConstants.setTypeMainSet, for: .normal)
             weightTextField.text = ""
             repsTextField.text = ""
+        }
+        
+        if isWorkoutStarted {
+            setCompletedStackView.isHidden = false
+        }
+        
+        if isWorkoutFinished {
+            setTypeButton.isEnabled = false
+            isCompletedButton.isEnabled = false
+            weightTextField.isEnabled = false
+            repsTextField.isEnabled = false
         }
         
         if set.isCompleted {

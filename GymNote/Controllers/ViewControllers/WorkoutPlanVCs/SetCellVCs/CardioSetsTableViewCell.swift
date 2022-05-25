@@ -18,6 +18,7 @@ class CardioSetsTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var durationTextField: UITextField!
     @IBOutlet weak var isCompletedButton: UIButton!
+    @IBOutlet weak var setCompletedStackView: UIStackView!
     
     //MARK: - Properties
     weak var delegate: CardioSetUpdatedDelegate?
@@ -37,7 +38,7 @@ class CardioSetsTableViewCell: UITableViewCell {
     }
     
     //MARK: - Helper Methods
-    func updateViews(with set: ExerciseSet) {
+    func updateViews(with set: ExerciseSet, isWorkoutStarted: Bool, isWorkoutFinished: Bool) {
         if set.distance != 0 && set.duration != 0 {
             distanceTextField.text = String(set.distance)
             durationTextField.text = String(set.duration)
@@ -45,6 +46,16 @@ class CardioSetsTableViewCell: UITableViewCell {
             //New Empty Cell
             distanceTextField.text = ""
             durationTextField.text = ""
+        }
+        
+        if isWorkoutStarted {
+            setCompletedStackView.isHidden = false
+        }
+        
+        if isWorkoutFinished {
+            isCompletedButton.isEnabled = false
+            distanceTextField.isEnabled = false
+            durationTextField.isEnabled = false
         }
         
         if set.isCompleted {

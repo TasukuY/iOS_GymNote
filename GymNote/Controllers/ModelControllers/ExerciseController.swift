@@ -39,6 +39,7 @@ class ExerciseController: NSObject {
         CoreDataManager.shared.saveContext()
     }
     
+    //TODO: - Enable to update exercise info
     func update(exercise: Exercise, title: String) {
         //not allow user to change the exercise type
         exercise.title = title

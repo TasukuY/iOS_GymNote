@@ -15,6 +15,9 @@ class ExerciseListViewController: UIViewController {
     @IBOutlet weak var exerciseListTableView: UITableView!
     @IBOutlet weak var addNewExerciseButton: UIBarButtonItem!
     @IBOutlet weak var addExistingExerciseButton: UIButton!
+    @IBOutlet weak var startTheWorkoutButton: UIButton!
+    @IBOutlet weak var finishTheWorkoutbutton: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     //MARK: - Properties
     private let storyboardManager = StoryboardManager()
@@ -66,10 +69,43 @@ class ExerciseListViewController: UIViewController {
     
     @IBAction func addExistingExerciseButtonTapped(_ sender: Any) {}
     
+    @IBAction func startTheWorkoutButtonTapped(_ sender: Any) {
+        guard let workout = workout else { return }
+        
+        startTheWorkoutButton.isHidden = true
+        finishTheWorkoutbutton.isHidden = false
+        
+        WorkoutController.shared.workoutIsStarted(workout: workout)
+    }
+    
+    @IBAction func finishTheWorkoutButtonTapped(_ sender: Any) {
+        guard let workout = workout else { return }
+        
+        finishTheWorkoutbutton.isHidden = true
+        addNewExerciseButton.isEnabled = false
+        addExistingExerciseButton.isHidden = true
+        doneButton.isEnabled = false
+
+        //TODO: - Delete all the sets that are not completed and exercises that do not have any sets
+        
+        let exercises = ExerciseController.shared.exercises.filter{ $0.workout == workout }
+        
+        for exercise in exercises {
+            deleteNotCompletedSets(exercise: exercise)
+        }
+        
+        for exercise in exercises {
+            deleteExercisesWithNoSets(exercise: exercise, workout: workout)
+        }
+        
+        WorkoutController.shared.workoutIsFinished(workout: workout)
+    }
+    
     //MARK: - Helper Methods
     func setupView() {
         exerciseListTableView.delegate = self
         exerciseListTableView.dataSource = self
+        SetupAddExistingExerciseButton()
         
         guard let workoutTitle = workoutTitle,
               let repeatValue = repeatValue,
@@ -85,11 +121,108 @@ class ExerciseListViewController: UIViewController {
             guard let workout = workout else { return }
             WorkoutController.shared.saveWorkout(newWorkout: workout)
         }
+        
+        setWorkoutReady()
+        finishedWorkoutSetup()
+    }
+    
+    func SetupAddExistingExerciseButton() {
+        guard let workout = workout else { return }
+        var menuChildren: [UIAction] = []
+        let exercisesForSpecificWorkout = ExerciseController.shared.exercises.filter{ $0.workout?.title == workout.title }
+        var exerciseTitleArr: [String] = []
+        var uniqueExerciseTitleArr: [String] = []
+        var uniqueExerciseArr: [Exercise] = []
+        
+        for exercise in exercisesForSpecificWorkout {
+            guard let exerciseTitle = exercise.title else { return }
+            exerciseTitleArr.append(exerciseTitle)
+        }
+        
+        uniqueExerciseTitleArr = Array(Set(exerciseTitleArr))
+        
+        for exerciseTitle in uniqueExerciseTitleArr {
+            if let uniqueExercise = exercisesForSpecificWorkout.first(where: { $0.title == exerciseTitle }) {
+                uniqueExerciseArr.append(uniqueExercise)
+            }
+        }
+        
+        for exercise in uniqueExerciseArr {
+            guard let exerciseTitle = exercise.title,
+                  let exerciseType = exercise.exerciseType
+            else { return }
+            
+            let existingExerciseUIAction = UIAction(title: exerciseTitle) { _ in
+                let copiedExercise = Exercise(title: exerciseTitle, exerciseType: exerciseType, workout: workout)
+                ExerciseController.shared.saveExercise(newExercise: copiedExercise, workout: workout)
+                self.exerciseListTableView.reloadData()
+            }
+            menuChildren.append(existingExerciseUIAction)
+        }
+
+        let menu = UIMenu(title: "Exercises", image: nil, identifier: nil,
+                          options: .displayInline,
+                          children: menuChildren)
+        addExistingExerciseButton.menu = menu
+        addExistingExerciseButton.showsMenuAsPrimaryAction = true
+        addExistingExerciseButton.titleLabel?.numberOfLines = 0
+        addExistingExerciseButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        addExistingExerciseButton.titleLabel?.lineBreakMode = .byWordWrapping
     }
     
     func userIsOnboarded() {
         UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
         storyboardManager.instantiateMainStoryboard()
+    }
+    
+    func setWorkoutReady() {
+        guard let workout = workout,
+              !workout.isFinished
+        else { return }
+        let today = Date()
+        
+        if workout.date?.datesFormatForWorkout() == today.datesFormatForWorkout() {
+            startTheWorkoutButton.isHidden = false
+        }
+    }
+    
+    func finishedWorkoutSetup() {
+        guard let workout = workout else { return }
+        
+        if workout.isFinished {
+            addNewExerciseButton.isEnabled = false
+            addExistingExerciseButton.isHidden = true
+            doneButton.isEnabled = false
+        }
+        
+        guard let workoutDates = workout.date,
+              !Calendar.current.isDateInToday(workoutDates)
+        else { return }
+        let today = Date()
+        
+        if workoutDates < today {
+            addNewExerciseButton.isEnabled = false
+            addExistingExerciseButton.isHidden = true
+            doneButton.isEnabled = false
+        }
+    }
+    
+    func deleteExercisesWithNoSets(exercise: Exercise, workout: Workout) {
+        let setsNumber = SetController.shared.sets.filter{ $0.exercise == exercise }.count
+        
+        if setsNumber == 0 {
+            ExerciseController.shared.delete(exercise: exercise, from: workout)
+        }
+    }
+    
+    func deleteNotCompletedSets(exercise: Exercise) {
+        let sets = SetController.shared.sets.filter{ $0.exercise == exercise }
+        
+        for exerciseSet in sets {
+            if exerciseSet.isCompleted == false && exerciseSet.note == nil {
+                SetController.shared.delete(set: exerciseSet, from: exercise)
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -112,6 +245,8 @@ class ExerciseListViewController: UIViewController {
             destination.workout = workout
             destination.exerciseTitle = exerciseToSend.title
             destination.exerciseType = exerciseToSend.exerciseType
+            destination.isWorkoutStarted = workout.isStarted
+            destination.isWorkoutFinished = workout.isFinished
         }
     }
 
@@ -132,6 +267,15 @@ extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource
         cell.updateViews(with: exerciseToDisplay)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let workout = workout else { return }
+            let exerciseToDelete = ExerciseController.shared.exercises.filter{ $0.workout == workout }[indexPath.row]
+            ExerciseController.shared.delete(exercise: exerciseToDelete, from: workout)
+            exerciseListTableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
 }//End of extension

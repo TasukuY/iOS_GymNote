@@ -18,6 +18,7 @@ class BodyweightTrainingTableViewCell: UITableViewCell {
     @IBOutlet weak var setTypeButton: UIButton!
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var isCompletedButton: UIButton!
+    @IBOutlet weak var setCompletedStackView: UIStackView!
     
     //MARK: - Properties
     weak var delegate: BodyweightTrainingSetUpdatedDelegate?
@@ -38,7 +39,7 @@ class BodyweightTrainingTableViewCell: UITableViewCell {
     }
     
     //MARK: - Helper Methods
-    func updateViews(with set: ExerciseSet) {
+    func updateViews(with set: ExerciseSet, isWorkoutStarted: Bool, isWorkoutFinished: Bool) {
         if set.setType != nil && set.reps != 0 {
             setTypeButton.setTitle(set.setType, for: .normal)
             repsTextField.text = String(set.reps)
@@ -46,6 +47,16 @@ class BodyweightTrainingTableViewCell: UITableViewCell {
             //New Empty Cell
             setTypeButton.setTitle(ExerciseConstants.setTypeMainSet, for: .normal)
             repsTextField.text = ""
+        }
+        
+        if isWorkoutStarted {
+            setCompletedStackView.isHidden = false
+        }
+        
+        if isWorkoutFinished {
+            setTypeButton.isEnabled = false
+            isCompletedButton.isEnabled = false
+            repsTextField.isEnabled = false
         }
         
         if set.isCompleted {

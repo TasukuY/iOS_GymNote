@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreData
-import UIKit
 
 class WorkoutController: NSObject {
     
@@ -42,6 +41,7 @@ class WorkoutController: NSObject {
         CoreDataManager.shared.saveContext()
     }
     
+    //TODO: - Enable to update workout info
     func update(workout: Workout, title: String?, date: Date?, repeatWorkout: String?) {
         if let newTitle = title {
             workout.title = newTitle
@@ -55,8 +55,14 @@ class WorkoutController: NSObject {
         CoreDataManager.shared.saveContext()
     }
     
-    func workoutIsCompleted(workout: Workout) {
-        workout.isCompleted = true
+    func workoutIsStarted(workout: Workout) {
+        workout.isStarted = true
+        CoreDataManager.shared.saveContext()
+    }
+    
+    func workoutIsFinished(workout: Workout) {
+        workout.isFinished = true
+        CoreDataManager.shared.saveContext()
     }
     
     func delete(workout: Workout, from user: User) {

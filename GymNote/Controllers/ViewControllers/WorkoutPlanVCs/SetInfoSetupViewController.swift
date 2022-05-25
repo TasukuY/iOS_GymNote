@@ -12,12 +12,15 @@ class SetInfoSetupViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var setsListTableView: UITableView!
     @IBOutlet weak var exerciseTitleLabel: UILabel!
+    @IBOutlet weak var addSetButton: UIButton!
     
     //MARK: - Properties
     var workout: Workout?
     var exercise: Exercise?
     var exerciseTitle: String?
     var exerciseType: String?
+    var isWorkoutStarted: Bool = false
+    var isWorkoutFinished: Bool = false
     
     //MARK: - Lifecycles
     override func viewDidLoad() {
@@ -58,6 +61,10 @@ class SetInfoSetupViewController: UIViewController {
             exercise = Exercise(title: exerciseTitle, exerciseType: exerciseType, workout: workout)
             guard let exercise = exercise else { return }
             ExerciseController.shared.saveExercise(newExercise: exercise, workout: workout)
+        }
+        
+        if isWorkoutFinished {
+            addSetButton.isHidden = true
         }
     }
     
@@ -109,7 +116,7 @@ extension SetInfoSetupViewController: UITableViewDelegate, UITableViewDataSource
             cell.indexPath = indexPath
             cell.delegate = self
             cell.hideKeyboardFeatureSetup()
-            cell.updateViews(with: setToDisplay)
+            cell.updateViews(with: setToDisplay, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
             
             return cell
         
@@ -122,7 +129,7 @@ extension SetInfoSetupViewController: UITableViewDelegate, UITableViewDataSource
             cell.delegate = self
             cell.hideKeyboardFeatureSetup()
             cell.setupSetTypeButton()
-            cell.updateViews(with: setToDisplay)
+            cell.updateViews(with: setToDisplay, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
             
             return cell
         
@@ -135,7 +142,7 @@ extension SetInfoSetupViewController: UITableViewDelegate, UITableViewDataSource
             cell.delegate = self
             cell.hideKeyboardFeatureSetup()
             cell.setupSetTypeButton()
-            cell.updateViews(with: setToDisplay)
+            cell.updateViews(with: setToDisplay, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
             
             return cell
         
@@ -147,12 +154,21 @@ extension SetInfoSetupViewController: UITableViewDelegate, UITableViewDataSource
             cell.indexPath = indexPath
             cell.delegate = self
             cell.hideKeyboardFeatureSetup()
-            cell.updateViews(with: setToDisplay)
+            cell.updateViews(with: setToDisplay, isWorkoutFinished: isWorkoutFinished)
             
             return cell
             
         default:
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let exercise = exercise else { return }
+            let setToDelete = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
+            SetController.shared.delete(set: setToDelete, from: exercise)
+            setsListTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
@@ -167,7 +183,7 @@ extension SetInfoSetupViewController: CardioSetUpdatedDelegate {
         else { return }
         let setToUpdate = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
         SetController.shared.update(set: setToUpdate, newSetType: nil, newWeight: nil, newReps: nil, newDistance: newDistance, newDuration: newDuration, newNote: nil)
-        sender.updateViews(with: setToUpdate)
+        sender.updateViews(with: setToUpdate, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
         setsListTableView.reloadData()
     }
 
@@ -177,7 +193,7 @@ extension SetInfoSetupViewController: CardioSetUpdatedDelegate {
         else { return }
         let setToUpdate = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
         SetController.shared.toggleIsCompletedState(of: setToUpdate)
-        sender.updateViews(with: setToUpdate)
+        sender.updateViews(with: setToUpdate, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
         setsListTableView.reloadData()
     }
     
@@ -191,7 +207,7 @@ extension SetInfoSetupViewController: WeightLiftingSetUpdatedDelegate {
         else { return }
         let setToUpdate = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
         SetController.shared.update(set: setToUpdate, newSetType: newSetTyep, newWeight: newWeight, newReps: newReps, newDistance: nil, newDuration: nil, newNote: nil)
-        sender.updateViews(with: setToUpdate)
+        sender.updateViews(with: setToUpdate, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
         setsListTableView.reloadData()
     }
     
@@ -201,7 +217,7 @@ extension SetInfoSetupViewController: WeightLiftingSetUpdatedDelegate {
         else { return }
         let setToUpdate = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
         SetController.shared.toggleIsCompletedState(of: setToUpdate)
-        sender.updateViews(with: setToUpdate)
+        sender.updateViews(with: setToUpdate, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
         setsListTableView.reloadData()
     }
     
@@ -215,7 +231,7 @@ extension SetInfoSetupViewController: BodyweightTrainingSetUpdatedDelegate {
         else { return }
         let setToUpdate = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
         SetController.shared.update(set: setToUpdate, newSetType: newSetTyep, newWeight: nil, newReps: newReps, newDistance: nil, newDuration: nil, newNote: nil)
-        sender.updateViews(with: setToUpdate)
+        sender.updateViews(with: setToUpdate, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
         setsListTableView.reloadData()
     }
     
@@ -225,7 +241,7 @@ extension SetInfoSetupViewController: BodyweightTrainingSetUpdatedDelegate {
         else { return }
         let setToUpdate = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
         SetController.shared.toggleIsCompletedState(of: setToUpdate)
-        sender.updateViews(with: setToUpdate)
+        sender.updateViews(with: setToUpdate, isWorkoutStarted: isWorkoutStarted, isWorkoutFinished: isWorkoutFinished)
         setsListTableView.reloadData()
     }
         
@@ -239,7 +255,7 @@ extension SetInfoSetupViewController: CustomExerciseSetUpdatedDelegate {
         else { return }
         let setToUpdate = SetController.shared.sets.filter{ $0.exercise == exercise}[indexPath.row]
         SetController.shared.update(set: setToUpdate, newSetType: nil, newWeight: nil, newReps: nil, newDistance: nil, newDuration: nil, newNote: newNotes)
-        sender.updateViews(with: setToUpdate)
+        sender.updateViews(with: setToUpdate, isWorkoutFinished: isWorkoutFinished)
         setsListTableView.reloadData()
     }
     

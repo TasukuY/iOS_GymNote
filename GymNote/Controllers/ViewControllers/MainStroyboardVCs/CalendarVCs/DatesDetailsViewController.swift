@@ -58,17 +58,32 @@ class DatesDetailsViewController: UIViewController {
     
     func setupAddExistingWorkoutButton() {
         var menuChildren: [UIAction] = []
+        var workoutTitleArr: [String] = []
+        var uniqueWorkoutTitleArr: [String] = []
+        var uniqueWorkoutArr: [Workout] = []
         
-        //How to eliminate workouts that has the same title
         for workout in WorkoutController.shared.workouts {
-            guard let workoutTitle = workout.title,
-                  let repeatWorkout = workout.repeatWorkout,
-                  let user = UserController.shared.user,
+            guard let workoutTitle = workout.title else { return }
+            workoutTitleArr.append(workoutTitle)
+        }
+        
+        uniqueWorkoutTitleArr = Array(Set(workoutTitleArr))
+        
+        for workoutTitle in uniqueWorkoutTitleArr {
+            if let uniqueWorkout = WorkoutController.shared.workouts.first(where: { $0.title == workoutTitle }) {
+                uniqueWorkoutArr.append(uniqueWorkout)
+            }
+        }
+        
+        for workout in uniqueWorkoutArr {
+            guard let user = UserController.shared.user,
+                  let workoutTitle = workout.title,
+                  let repeatValue = workout.repeatWorkout,
                   let chosenDate = chosenDate
             else { return }
             
             let existingWorkoutUIAction = UIAction(title: workoutTitle) { _ in
-                let copiedWorkoutWithNewDates = Workout(title: workoutTitle, date: chosenDate, user: user, repeatWorkout: repeatWorkout)
+                let copiedWorkoutWithNewDates = Workout(title: workoutTitle, date: chosenDate, user: user, repeatWorkout: repeatValue)
                 WorkoutController.shared.saveWorkout(newWorkout: copiedWorkoutWithNewDates)
                 self.setupNoWorkoutLabel()
                 self.workoutListTableView.reloadData()
@@ -76,7 +91,7 @@ class DatesDetailsViewController: UIViewController {
             menuChildren.append(existingWorkoutUIAction)
         }
 
-        let menu = UIMenu(title: "Repeat Menu", image: nil, identifier: nil,
+        let menu = UIMenu(title: "Workouts", image: nil, identifier: nil,
                           options: .displayInline,
                           children: menuChildren)
         addExistingWorkoutButton.menu = menu
@@ -108,7 +123,7 @@ class DatesDetailsViewController: UIViewController {
             destination.workoutTitle = workoutToSend.title
             destination.repeatValue = WorkoutConstants.neverRepeat
             destination.workoutStartingDates = workoutToSend.date
-            destination.navPath = StoryboardConstants.navPathFromHomeVC
+            destination.navPath = StoryboardConstants.navPathFromCalendarVC
         }
     }
 
@@ -122,13 +137,26 @@ extension DatesDetailsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = workoutListTableView.dequeueReusableCell(withIdentifier: WorkoutConstants.workoutCellIdentifier, for: indexPath) as? WorkoutTableViewCell else { return UITableViewCell() }
+        guard let cell = workoutListTableView.dequeueReusableCell(withIdentifier: WorkoutConstants.workoutCellIdentifier, for: indexPath) as? WorkoutTableViewCell,
+              let chosenDate = chosenDate
+        else { return UITableViewCell() }
         
-        let workoutToDisplay = WorkoutController.shared.workouts.filter{ $0.date?.datesFormatForWorkout() == chosenDate?.datesFormatForWorkout() }[indexPath.row]
+        let workoutToDisplay = WorkoutController.shared.workouts.filter{ $0.date?.datesFormatForWorkout() == chosenDate.datesFormatForWorkout() }[indexPath.row]
         
         cell.updateViews(with: workoutToDisplay)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let user = UserController.shared.user,
+                  let chosenDate = chosenDate
+            else { return }
+            let workoutToDelete = WorkoutController.shared.workouts.filter{ $0.date?.datesFormatForWorkout() == chosenDate.datesFormatForWorkout() }[indexPath.row]
+            WorkoutController.shared.delete(workout: workoutToDelete, from: user)
+            workoutListTableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
 }//End of extension

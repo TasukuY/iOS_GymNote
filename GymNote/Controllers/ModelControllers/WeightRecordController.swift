@@ -41,6 +41,12 @@ class WeightRecordController: NSObject {
         CoreDataManager.shared.saveContext()
     }
     
+    //TODO: - Enable to update weight record info
+    func update(weightRecord: WeightRecord, newWeight: Double) {
+        weightRecord.weight = newWeight
+        CoreDataManager.shared.saveContext()
+    }
+    
     func delete() {
         //delete all weight records
         for weightRecord in weightRecords {

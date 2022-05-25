@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+//        fetchAllData()
         setupView()
     }
     
@@ -44,7 +45,8 @@ class HomeViewController: UIViewController {
     @IBAction func addExistingWorkoutButtonTapped(_ sender: Any) {}
     
     @IBAction func weightRecordSaveButtonTapped(_ sender: Any) {
-        guard let weightRecordofTheDay = weightRecordOfTheDayTextField.text,
+        guard let user = UserController.shared.user,
+              let weightRecordofTheDay = weightRecordOfTheDayTextField.text,
               !weightRecordofTheDay.isEmpty
         else {
             AlertManager.showWeightRecordIsEmpty(on: self)
@@ -57,11 +59,22 @@ class HomeViewController: UIViewController {
             return
         }
         
+        UserController.shared.update(user: user, username: nil, weight: weightRecord, height: nil, profileImage: nil)
+        
         WeightRecordController.shared.addNewRecordWith(newWeight: weightRecord)
         isWeightRecordExist()
     }
     
     //MARK: - Helper Methods
+    func fetchAllData() {
+        //fetch User, Workouts, Exercises, Sets, and weightrecord, and update the SoT
+        UserController.shared.fetchUserData()
+        WorkoutController.shared.fetchWorkoutData()
+        ExerciseController.shared.fetchExerciseData()
+        SetController.shared.fetchSetData()
+        WeightRecordController.shared.fetchWeightRecordData()
+    }
+    
     func setupView() {
         workoutListTableView.delegate = self
         workoutListTableView.dataSource = self
@@ -69,8 +82,8 @@ class HomeViewController: UIViewController {
         setupAddExistingWorkoutButton()
         setupLabelsandButtons()
         setupNoWorkoutLabel()
-        hideKeyboardFeatureSetup()
         isWeightRecordExist()
+        hideKeyboardFeatureSetup()
     }
     
     func setupProfileImageView() {
@@ -98,8 +111,8 @@ class HomeViewController: UIViewController {
     }
     
     func hideKeyboardFeatureSetup() {
-//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-//        view.addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
         weightRecordOfTheDayTextField.delegate = self
     }
     
@@ -129,16 +142,31 @@ class HomeViewController: UIViewController {
     
     func setupAddExistingWorkoutButton() {
         var menuChildren: [UIAction] = []
+        var workoutTitleArr: [String] = []
+        var uniqueWorkoutTitleArr: [String] = []
+        var uniqueWorkoutArr: [Workout] = []
         
-        //How to eliminate workouts that has the same title
         for workout in WorkoutController.shared.workouts {
-            guard let workoutTitle = workout.title,
-                  let repeatWorkout = workout.repeatWorkout,
-                  let user = UserController.shared.user
+            guard let workoutTitle = workout.title else { return }
+            workoutTitleArr.append(workoutTitle)
+        }
+        
+        uniqueWorkoutTitleArr = Array(Set(workoutTitleArr))
+        
+        for workoutTitle in uniqueWorkoutTitleArr {
+            if let uniqueWorkout = WorkoutController.shared.workouts.first(where: { $0.title == workoutTitle }) {
+                uniqueWorkoutArr.append(uniqueWorkout)
+            }
+        }
+        
+        for workout in uniqueWorkoutArr {
+            guard let user = UserController.shared.user,
+                  let workoutTitle = workout.title,
+                  let repeatValue = workout.repeatWorkout
             else { return }
             
             let existingWorkoutUIAction = UIAction(title: workoutTitle) { _ in
-                let copiedWorkoutWithNewDates = Workout(title: workoutTitle, date: self.today, user: user, repeatWorkout: repeatWorkout)
+                let copiedWorkoutWithNewDates = Workout(title: workoutTitle, date: self.today, user: user, repeatWorkout: repeatValue)
                 WorkoutController.shared.saveWorkout(newWorkout: copiedWorkoutWithNewDates)
                 self.setupNoWorkoutLabel()
                 self.workoutListTableView.reloadData()
@@ -146,7 +174,7 @@ class HomeViewController: UIViewController {
             menuChildren.append(existingWorkoutUIAction)
         }
 
-        let menu = UIMenu(title: "Repeat Menu", image: nil, identifier: nil,
+        let menu = UIMenu(title: "Workouts", image: nil, identifier: nil,
                           options: .displayInline,
                           children: menuChildren)
         addExistingWorkoutButton.menu = menu
@@ -198,6 +226,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let user = UserController.shared.user else { return }
+            let workoutToDelete = WorkoutController.shared.workouts.filter{ $0.date?.datesFormatForWorkout() == today.datesFormatForWorkout() }[indexPath.row]
+            WorkoutController.shared.delete(workout: workoutToDelete, from: user)
+            workoutListTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
 }//End of extension
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -244,7 +281,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
               let user = UserController.shared.user
         else { return }
         
-        user.profileImage = selectedImage
+        UserController.shared.update(user: user, username: nil, weight: nil, height: nil, profileImage: selectedImage)
         profileImageView.image = selectedImage
 
         picker.dismiss(animated: true, completion: nil)

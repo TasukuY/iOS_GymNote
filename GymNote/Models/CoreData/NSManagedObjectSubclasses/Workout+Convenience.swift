@@ -15,7 +15,8 @@ extension Workout {
         self.title = title
         self.date = date
         self.repeatWorkout = repeatWorkout
-        self.isCompleted = false
+        self.isFinished = false
+        self.isStarted = false
         self.user = user
         self.exercises = []
     }

@@ -21,7 +21,12 @@ class CustomExerciseSetsTableViewCell: UITableViewCell {
     var indexPath: IndexPath?
     
     //MARK: - Helper Methods
-    func updateViews(with set: ExerciseSet) {
+    func updateViews(with set: ExerciseSet, isWorkoutFinished: Bool) {
+        
+        if isWorkoutFinished {
+            noteTextField.isUserInteractionEnabled = false
+        }
+        
         if let note = set.note {
             noteTextField.text = note
         } else {

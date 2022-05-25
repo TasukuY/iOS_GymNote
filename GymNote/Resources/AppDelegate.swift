@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ExerciseController.shared.fetchExerciseData()
         SetController.shared.fetchSetData()
         WeightRecordController.shared.fetchWeightRecordData()
-        
+
         if UserController.shared.user != nil {
             UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
         }
