@@ -40,7 +40,7 @@
 		C9343B2D282B0A34008B5DF4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9343B2B282B0A34008B5DF4 /* Interface.storyboard */; };
 		C9343B2F282B0A35008B5DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9343B2E282B0A35008B5DF4 /* Assets.xcassets */; };
 		C9343B35282B0A35008B5DF4 /* GymNote WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C9343B34282B0A35008B5DF4 /* GymNote WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C9343B3A282B0A35008B5DF4 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B39282B0A35008B5DF4 /* InterfaceController.swift */; };
+		C9343B3A282B0A35008B5DF4 /* GymNoteInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B39282B0A35008B5DF4 /* GymNoteInterfaceController.swift */; };
 		C9343B3C282B0A35008B5DF4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3B282B0A35008B5DF4 /* ExtensionDelegate.swift */; };
 		C9343B3E282B0A35008B5DF4 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3D282B0A35008B5DF4 /* NotificationController.swift */; };
 		C9343B40282B0A35008B5DF4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B3F282B0A35008B5DF4 /* ComplicationController.swift */; };
@@ -143,7 +143,7 @@
 		C9343B2C282B0A34008B5DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C9343B2E282B0A35008B5DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9343B34282B0A35008B5DF4 /* GymNote WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GymNote WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9343B39282B0A35008B5DF4 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C9343B39282B0A35008B5DF4 /* GymNoteInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymNoteInterfaceController.swift; sourceTree = "<group>"; };
 		C9343B3B282B0A35008B5DF4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		C9343B3D282B0A35008B5DF4 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		C9343B3F282B0A35008B5DF4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 		C9343B38282B0A35008B5DF4 /* GymNote WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C9343B39282B0A35008B5DF4 /* InterfaceController.swift */,
+				C9343B39282B0A35008B5DF4 /* GymNoteInterfaceController.swift */,
 				C9343B3B282B0A35008B5DF4 /* ExtensionDelegate.swift */,
 				C9343B3D282B0A35008B5DF4 /* NotificationController.swift */,
 				C9343B3F282B0A35008B5DF4 /* ComplicationController.swift */,
@@ -674,7 +674,7 @@
 				C9343B3E282B0A35008B5DF4 /* NotificationController.swift in Sources */,
 				C9343B40282B0A35008B5DF4 /* ComplicationController.swift in Sources */,
 				C9343B3C282B0A35008B5DF4 /* ExtensionDelegate.swift in Sources */,
-				C9343B3A282B0A35008B5DF4 /* InterfaceController.swift in Sources */,
+				C9343B3A282B0A35008B5DF4 /* GymNoteInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
