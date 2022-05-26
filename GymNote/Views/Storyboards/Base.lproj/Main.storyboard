@@ -367,19 +367,42 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OFj-Rc-4Ny">
-                        <barButtonItem key="rightBarButtonItem" title="Weight" image="chart.line.uptrend.xyaxis.circle" catalog="system" id="LoD-Fh-Wok">
-                            <connections>
-                                <action selector="chartsButtonTapped:" destination="bh2-Jk-M18" id="U8y-qs-vCo"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="W8C-UX-3qR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bxl-Db-NgQ">
+                                <rect key="frame" x="285" y="5" width="50" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chart.xyaxis.line" catalog="system" title="">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="exerciseProgressButtonTapped:" destination="bh2-Jk-M18" eventType="touchUpInside" id="fOP-vL-dH7"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Jyu-PK-5K8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zuX-Is-7Dl">
+                                <rect key="frame" x="343" y="5" width="51" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="menuButtonTapped:" destination="bh2-Jk-M18" eventType="touchUpInside" id="LG9-fu-Rvv"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="chartsButton" destination="LoD-Fh-Wok" id="mcR-mK-cRX"/>
+                        <outlet property="chartTitleLabel" destination="0Ik-0g-b2q" id="N2J-X9-LwO"/>
+                        <outlet property="exerciseProgressButton" destination="Bxl-Db-NgQ" id="91c-9u-995"/>
+                        <outlet property="menuButton" destination="zuX-Is-7Dl" id="3PK-Ec-cAA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abx-P1-FKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292.753623188406" y="-506.25"/>
+            <point key="canvasLocation" x="2173.913043478261" y="-506.25"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="pJP-ob-asd">
@@ -438,7 +461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LcB-wr-ts3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292.753623188406" y="1621.875"/>
+            <point key="canvasLocation" x="2174" y="1622"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ame-8n-MmZ">
@@ -1343,9 +1366,10 @@
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
-        <image name="chart.line.uptrend.xyaxis.circle" catalog="system" width="128" height="121"/>
+        <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">

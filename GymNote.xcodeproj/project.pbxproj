@@ -52,6 +52,7 @@
 		C9343B75282CC4E5008B5DF4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B74282CC4E5008B5DF4 /* UserController.swift */; };
 		C9343B8D282CE80D008B5DF4 /* UserInfoSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9343B8C282CE80D008B5DF4 /* UserInfoSetupViewController.swift */; };
 		C96FF9FB283EF40B004774CB /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96FF9FA283EF40B004774CB /* ProgressViewController.swift */; };
+		C96FF9FD283F1FC6004774CB /* ProgressConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96FF9FC283F1FC6004774CB /* ProgressConstants.swift */; };
 		C9859E0D283DBC2A00BCEA15 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9859E0C283DBC2A00BCEA15 /* SettingViewController.swift */; };
 		C98FC145282F144B00FF504A /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC144282F144B00FF504A /* WorkoutController.swift */; };
 		C98FC147282F145B00FF504A /* ExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC146282F145B00FF504A /* ExerciseController.swift */; };
@@ -166,6 +167,7 @@
 		C9343B74282CC4E5008B5DF4 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		C9343B8C282CE80D008B5DF4 /* UserInfoSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSetupViewController.swift; sourceTree = "<group>"; };
 		C96FF9FA283EF40B004774CB /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		C96FF9FC283F1FC6004774CB /* ProgressConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressConstants.swift; sourceTree = "<group>"; };
 		C9859E0C283DBC2A00BCEA15 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C98FC144282F144B00FF504A /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 		C98FC146282F145B00FF504A /* ExerciseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseController.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				C91740C628380E69004E6EC2 /* UserConstants.swift */,
 				C921EE482834C3780064DD7C /* WorkoutConstants.swift */,
 				C921EE4A2834CEA20064DD7C /* ExerciseConstants.swift */,
+				C96FF9FC283F1FC6004774CB /* ProgressConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				C91740C728380E69004E6EC2 /* UserConstants.swift in Sources */,
 				C91740C1283727F0004E6EC2 /* BodyweightTrainingTableViewCell.swift in Sources */,
 				C91740D42838D245004E6EC2 /* User+CoreDataClass.swift in Sources */,
+				C96FF9FD283F1FC6004774CB /* ProgressConstants.swift in Sources */,
 				C921EE492834C3780064DD7C /* WorkoutConstants.swift in Sources */,
 				C98FC15D2830A06400FF504A /* UserImageSetupViewController.swift in Sources */,
 				C9185E932832DFF5004759CC /* WorkoutInfoSetupViewController.swift in Sources */,

@@ -1,4 +1,5 @@
 PODS:
+  - BulletinBoard (5.0.0)
   - Charts (4.0.3):
     - Charts/Core (= 4.0.3)
   - Charts/Core (4.0.3):
@@ -6,17 +7,20 @@ PODS:
   - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
+  - BulletinBoard
   - Charts
 
 SPEC REPOS:
   trunk:
+    - BulletinBoard
     - Charts
     - SwiftAlgorithms
 
 SPEC CHECKSUMS:
+  BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
   Charts: d959d6723c8eedfdd0735dfc28cb0a71762ac4d9
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: bc0f9a3f64e381e9c705f5afa4e0edbefacd3aac
+PODFILE CHECKSUM: 0ac520f7a56761fb93f325607462e6653c36d901
 
 COCOAPODS: 1.11.3

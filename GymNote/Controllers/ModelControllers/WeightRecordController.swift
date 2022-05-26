@@ -37,7 +37,6 @@ class WeightRecordController: NSObject {
         let newWeightRecord = WeightRecord(weight: newWeight, context: CoreDataManager.managedContext)
         //adding the new workout to the SOT array
         weightRecords.append(newWeightRecord)
-        print("weight records: \(weightRecords.count)")
         CoreDataManager.shared.saveContext()
     }
     
