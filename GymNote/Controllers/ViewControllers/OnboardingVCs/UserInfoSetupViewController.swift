@@ -111,7 +111,6 @@ class UserInfoSetupViewController: UIViewController {
         }
     }
     
-    
 }//End of class
 
 extension UserInfoSetupViewController: UITextFieldDelegate {

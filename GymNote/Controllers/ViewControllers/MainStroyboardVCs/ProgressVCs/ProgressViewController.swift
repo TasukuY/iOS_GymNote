@@ -14,11 +14,16 @@ class ProgressViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var chartTitleLabel: UILabel!
     @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var exerciseProgressButton: UIButton!
+    @IBOutlet weak var weightLiftingProgressButton: UIButton!
+    @IBOutlet weak var cardioProgressButton: UIButton!
+    @IBOutlet weak var bodyweightTrainingProgressButton: UIButton!
     
     //MARK: - Properties
-    let weightRecordsLineChart = LineChartView()
+    let weihgtProgressLineChart = LineChartView()
     let workoutRatioPieChart = PieChartView()
+    let weightLiftingProgressBarChart = BarChartView()
+    let cardioProgressScatterChart = ScatterChartView()
+    let bodyweightTrainingProgressBarChart = BarChartView()
     
     //MARK: - Lifecycles
     override func viewDidLoad() {
@@ -28,25 +33,36 @@ class ProgressViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setUpWeightProgressChart()
-        setUpWorkoutRatioChart()
+        setupWeightProgressChart()
+        setupWorkoutRatioChart()
     }
         
     //MARK: - IBActions
     @IBAction func menuButtonTapped(_ sender: Any) {}
     @IBAction func exerciseProgressButtonTapped(_ sender: Any) {}
+    @IBAction func cardioProgressButtonTapped(_ sender: Any) {}
+    @IBAction func bodyweightTrainingProgressButtonTapped(_ sender: Any) {}
     
     //MARK: - Helper Methods
     func setupView() {
         chartTitleLabel.text = ProgressConstants.weightProgress
-        weightRecordsLineChart.delegate = self
+        weihgtProgressLineChart.delegate = self
         workoutRatioPieChart.delegate = self
         workoutRatioPieChart.isHidden = true
+        weightLiftingProgressBarChart.delegate = self
+        weightLiftingProgressBarChart.isHidden = true
+        cardioProgressScatterChart.delegate = self
+        cardioProgressScatterChart.isHidden = true
+        bodyweightTrainingProgressBarChart.delegate = self
+        bodyweightTrainingProgressBarChart.isHidden = true
         
-        setupChartsButton()
+        setupMenuButton()
+        setupWeightLiftingProgressButton()
+        setupCardioProgressButton()
+        setupBodyweightTrainingProgressButton()
     }
     
-    func setUpWorkoutRatioChart() {
+    func setupWorkoutRatioChart() {
         var workoutRatioEntries: [PieChartDataEntry] = []
         
         //make unique workout array
@@ -65,13 +81,13 @@ class ProgressViewController: UIViewController {
         uniqueWorkoutTitleArr = Array(Set(workoutTitleArr))
         
         for workoutTitle in uniqueWorkoutTitleArr {
-            if let uniqueWorkout = WorkoutController.shared.workouts.first(where: { $0.title == workoutTitle }) {
+            if let uniqueWorkout = WorkoutController.shared.workouts.first(where: { $0.title == workoutTitle && $0.isFinished}) {
                 uniqueWorkoutArr.append(uniqueWorkout)
             }
         }
         
         for workoutTitle in uniqueWorkoutTitleArr {
-            let uniqueWorkoutCount = WorkoutController.shared.workouts.filter{ $0.title == workoutTitle }.count
+            let uniqueWorkoutCount = WorkoutController.shared.workouts.filter{ $0.title == workoutTitle && $0.isFinished}.count
             uniqueWorkoutCountArray.append(uniqueWorkoutCount)
         }
         
@@ -94,7 +110,66 @@ class ProgressViewController: UIViewController {
         createPieCharts(pieChart: workoutRatioPieChart, entries: workoutRatioEntries)
     }
     
-    func setUpWeightProgressChart() {
+    func setupWeightLiftingProgressChart(exerciseTitle: String) {
+        var exerciseProgressEntries = [BarChartDataEntry]()
+        let allSpecifiedExercises = ExerciseController.shared.exercises.filter{ $0.title == exerciseTitle && $0.workout!.isFinished }
+        var counter = 0.0
+        
+        for exercise in allSpecifiedExercises {
+            var volume = 0.0
+            let sets = SetController.shared.sets.filter{ $0.exercise == exercise }
+            
+            for exerciseSet in sets {
+                volume += (exerciseSet.weight * Double(exerciseSet.reps))
+            }
+            
+            let exerciseDataEntry = BarChartDataEntry(x: counter, y: volume, data: exercise)
+            exerciseProgressEntries.append(exerciseDataEntry)
+            counter += 1.0
+        }
+        
+        createBarCharts(barChart: weightLiftingProgressBarChart, entries: exerciseProgressEntries)
+    }
+    
+    func setupCardioProgressChart(exerciseTitle: String) {
+        var exerciseProgressEntries = [ChartDataEntry]()
+        let allSpecifiedExercises = ExerciseController.shared.exercises.filter{ $0.title == exerciseTitle && $0.workout!.isFinished }
+        
+        for exercise in allSpecifiedExercises {
+            let sets = SetController.shared.sets.filter{ $0.exercise == exercise }
+            
+            for exerciseSet in sets {
+                let exerciseDataEntry = BarChartDataEntry(x: Double(exerciseSet.duration), y: exerciseSet.distance, data: exerciseSet)
+                exerciseProgressEntries.append(exerciseDataEntry)
+            }
+        }
+        
+        createScatterCharts(scatterChart: cardioProgressScatterChart, entries: exerciseProgressEntries)
+    }
+    
+    func setupBodyweightTrainingProgressChart(exerciseTitle: String) {
+        var exerciseProgressEntries = [BarChartDataEntry]()
+        
+        let allSpecifiedExercises = ExerciseController.shared.exercises.filter{ $0.title == exerciseTitle && $0.workout!.isFinished }
+        var counter = 0.0
+        
+        for exercise in allSpecifiedExercises {
+            var total = 0
+            let sets = SetController.shared.sets.filter{ $0.exercise == exercise }
+            
+            for exerciseSet in sets {
+                total += Int(exerciseSet.reps)
+            }
+            
+            let exerciseDataEntry = BarChartDataEntry(x: counter, y: Double(total), data: exercise)
+            exerciseProgressEntries.append(exerciseDataEntry)
+            counter += 1.0
+        }
+        
+        createBarCharts(barChart: bodyweightTrainingProgressBarChart, entries: exerciseProgressEntries)
+    }
+    
+    func setupWeightProgressChart() {
         var weightRecordEntries: [ChartDataEntry] = []
         var counter = 0.0
         
@@ -105,7 +180,7 @@ class ProgressViewController: UIViewController {
             counter += 1.0
         }
         
-        createLineCharts(lineChart: weightRecordsLineChart, entries: weightRecordEntries)
+        createLineCharts(lineChart: weihgtProgressLineChart, entries: weightRecordEntries)
     }
     
     func createPieCharts(pieChart: PieChartView, entries: [PieChartDataEntry]) {
@@ -148,24 +223,62 @@ class ProgressViewController: UIViewController {
         lineChart.data = data
     }
     
-    func setupChartsButton() {
+    func createBarCharts(barChart: BarChartView, entries: [BarChartDataEntry]) {
+        barChart.frame = CGRect(x: 0, y: 0,
+                                width: self.view.frame.size.width * 0.95,
+                                height: self.view.frame.size.width * 0.95)
+        barChart.center = view.center
+        view.addSubview(barChart)
+        
+        let dataSet = BarChartDataSet(entries: entries)
+        
+        dataSet.colors = ChartColorTemplates.joyful()
+        
+        let data = BarChartData(dataSet: dataSet)
+        
+        barChart.data = data
+    }
+    
+    func createScatterCharts(scatterChart: ScatterChartView, entries: [ChartDataEntry]) {
+        scatterChart.frame = CGRect(x: 0, y: 0,
+                                    width: self.view.frame.size.width * 0.95,
+                                    height: self.view.frame.size.width * 0.95)
+        scatterChart.center = view.center
+        view.addSubview(scatterChart)
+        
+        let dataSet = ScatterChartDataSet(entries: entries)
+        
+        dataSet.colors = ChartColorTemplates.colorful()
+        
+        let data = ScatterChartData(dataSet: dataSet)
+        
+        scatterChart.data = data
+    }
+    
+    func setupMenuButton() {
         var  menuArr: [UIAction] = []
         
         let weightProgress = UIAction(title: ProgressConstants.weightProgress, image: nil) { _ in
             self.chartTitleLabel.text = ProgressConstants.weightProgress
-            self.weightRecordsLineChart.isHidden = false
+            self.weihgtProgressLineChart.isHidden = false
             self.workoutRatioPieChart.isHidden = true
+            self.weightLiftingProgressBarChart.isHidden = true
+            self.cardioProgressScatterChart.isHidden = true
+            self.bodyweightTrainingProgressBarChart.isHidden = true
         }
         menuArr.append(weightProgress)
         
         let workoutRatio = UIAction(title: ProgressConstants.workoutRatio, image: nil) { _ in
             self.chartTitleLabel.text = ProgressConstants.workoutRatio
             self.workoutRatioPieChart.isHidden = false
-            self.weightRecordsLineChart.isHidden = true
+            self.weihgtProgressLineChart.isHidden = true
+            self.weightLiftingProgressBarChart.isHidden = true
+            self.cardioProgressScatterChart.isHidden = true
+            self.bodyweightTrainingProgressBarChart.isHidden = true
         }
         menuArr.append(workoutRatio)
         
-        let menu = UIMenu(title: "Exercise Type Menu", image: nil, identifier: nil,
+        let menu = UIMenu(title: "Chart Menu", image: nil, identifier: nil,
                           options: .displayInline,
                           children: menuArr)
         menuButton.menu = menu
@@ -175,6 +288,148 @@ class ProgressViewController: UIViewController {
         menuButton.titleLabel?.lineBreakMode = .byWordWrapping
     }
 
+    func setupWeightLiftingProgressButton() {
+        var menuArr: [UIAction] = []
+        var allCompletedExercises: [Exercise] = []
+        var exerciseTitleArr: [String] = []
+        var uniqueExerciseTitleArr: [String] = []
+        let completedWorkouts = WorkoutController.shared.workouts.filter{ $0.isFinished}
+        
+        for workout in completedWorkouts {
+            let exercisesForSpecificWorkout = ExerciseController.shared.exercises.filter{ $0.workout == workout }
+            
+            for exercise in exercisesForSpecificWorkout {
+                if exercise.exerciseType == ExerciseConstants.exerciseTypeWeightLifting {
+                    allCompletedExercises.append(exercise)
+                }
+            }
+        }
+        
+        for exercise in allCompletedExercises {
+            guard let exerciseTitle = exercise.title else { return }
+            exerciseTitleArr.append(exerciseTitle)
+        }
+
+        uniqueExerciseTitleArr = Array(Set(exerciseTitleArr))
+        
+        for exerciseTitle in uniqueExerciseTitleArr {
+            let exerciseUIAction = UIAction(title: exerciseTitle) { _ in
+                self.chartTitleLabel.text = exerciseTitle
+                self.setupWeightLiftingProgressChart(exerciseTitle: exerciseTitle)
+                self.workoutRatioPieChart.isHidden = true
+                self.weihgtProgressLineChart.isHidden = true
+                self.cardioProgressScatterChart.isHidden = true
+                self.weightLiftingProgressBarChart.isHidden = false
+                self.bodyweightTrainingProgressBarChart.isHidden = true
+            }
+            menuArr.append(exerciseUIAction)
+        }
+        
+        let menu = UIMenu(title: "Weight Lifting", image: nil, identifier: nil,
+                          options: .displayInline,
+                          children: menuArr)
+        weightLiftingProgressButton.menu = menu
+        weightLiftingProgressButton.showsMenuAsPrimaryAction = true
+        weightLiftingProgressButton.titleLabel?.numberOfLines = 0
+        weightLiftingProgressButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        weightLiftingProgressButton.titleLabel?.lineBreakMode = .byWordWrapping
+    }
+    
+    func setupCardioProgressButton() {
+        var menuArr: [UIAction] = []
+        var allCompletedExercises: [Exercise] = []
+        var exerciseTitleArr: [String] = []
+        var uniqueExerciseTitleArr: [String] = []
+        let completedWorkouts = WorkoutController.shared.workouts.filter{ $0.isFinished}
+        
+        for workout in completedWorkouts {
+            let exercisesForSpecificWorkout = ExerciseController.shared.exercises.filter{ $0.workout == workout }
+            
+            for exercise in exercisesForSpecificWorkout {
+                if exercise.exerciseType == ExerciseConstants.exerciseTypeCardio {
+                    allCompletedExercises.append(exercise)
+                }
+            }
+        }
+        
+        for exercise in allCompletedExercises {
+            guard let exerciseTitle = exercise.title else { return }
+            exerciseTitleArr.append(exerciseTitle)
+        }
+
+        uniqueExerciseTitleArr = Array(Set(exerciseTitleArr))
+        
+        for exerciseTitle in uniqueExerciseTitleArr {
+            let exerciseUIAction = UIAction(title: exerciseTitle) { _ in
+                self.chartTitleLabel.text = exerciseTitle
+                self.setupCardioProgressChart(exerciseTitle: exerciseTitle)
+                self.workoutRatioPieChart.isHidden = true
+                self.weihgtProgressLineChart.isHidden = true
+                self.cardioProgressScatterChart.isHidden = false
+                self.weightLiftingProgressBarChart.isHidden = true
+                self.bodyweightTrainingProgressBarChart.isHidden = true
+            }
+            menuArr.append(exerciseUIAction)
+        }
+        
+        let menu = UIMenu(title: "Cardio Training", image: nil, identifier: nil,
+                          options: .displayInline,
+                          children: menuArr)
+        cardioProgressButton.menu = menu
+        cardioProgressButton.showsMenuAsPrimaryAction = true
+        cardioProgressButton.titleLabel?.numberOfLines = 0
+        cardioProgressButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        cardioProgressButton.titleLabel?.lineBreakMode = .byWordWrapping
+    }
+    
+    func setupBodyweightTrainingProgressButton() {
+        var menuArr: [UIAction] = []
+        var allCompletedExercises: [Exercise] = []
+        var exerciseTitleArr: [String] = []
+        var uniqueExerciseTitleArr: [String] = []
+        let completedWorkouts = WorkoutController.shared.workouts.filter{ $0.isFinished}
+        
+        for workout in completedWorkouts {
+            let exercisesForSpecificWorkout = ExerciseController.shared.exercises.filter{ $0.workout == workout }
+            
+            for exercise in exercisesForSpecificWorkout {
+                if exercise.exerciseType == ExerciseConstants.exerciseTypeBodyWeightTraining {
+                    allCompletedExercises.append(exercise)
+                }
+            }
+        }
+        
+        for exercise in allCompletedExercises {
+            guard let exerciseTitle = exercise.title else { return }
+            exerciseTitleArr.append(exerciseTitle)
+        }
+
+        uniqueExerciseTitleArr = Array(Set(exerciseTitleArr))
+        
+        for exerciseTitle in uniqueExerciseTitleArr {
+            let exerciseUIAction = UIAction(title: exerciseTitle) { _ in
+                self.chartTitleLabel.text = exerciseTitle
+                //call bodyweightChart setup function here
+                self.setupBodyweightTrainingProgressChart(exerciseTitle: exerciseTitle)
+                self.workoutRatioPieChart.isHidden = true
+                self.weihgtProgressLineChart.isHidden = true
+                self.cardioProgressScatterChart.isHidden = true
+                self.weightLiftingProgressBarChart.isHidden = true
+                self.bodyweightTrainingProgressBarChart.isHidden = false
+            }
+            menuArr.append(exerciseUIAction)
+        }
+
+        let menu = UIMenu(title: "Bodyweight Training", image: nil, identifier: nil,
+                          options: .displayInline,
+                          children: menuArr)
+        bodyweightTrainingProgressButton.menu = menu
+        bodyweightTrainingProgressButton.showsMenuAsPrimaryAction = true
+        bodyweightTrainingProgressButton.titleLabel?.numberOfLines = 0
+        bodyweightTrainingProgressButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        bodyweightTrainingProgressButton.titleLabel?.lineBreakMode = .byWordWrapping
+    }
+    
 }//End of class
 
 extension ProgressViewController: ChartViewDelegate {
@@ -192,7 +447,7 @@ extension ProgressViewController: ChartViewDelegate {
                     
                     let newItem = BLTNPageItem(title: ProgressConstants.weightProgress)
                     item = newItem
-                    item.descriptionText = "Date: \(weightDate.datesFormatForWorkout())\nWeight: \(weightRecord.weight) lb"
+                    item.descriptionText = "\(weightDate.datesFormatForWorkout())\n\n\(weightRecord.weight) lb"
                 }
                 
                 item.requiresCloseButton = false
@@ -209,7 +464,79 @@ extension ProgressViewController: ChartViewDelegate {
                     //Workout Ratio Chart's Details
                     let newItem = BLTNPageItem(title: ProgressConstants.workoutRatio)
                     item = newItem
-                    item.descriptionText = "\(workoutRatio.title) \n\(workoutRatio.ratio)% of All Workouts"
+                    item.descriptionText = "\(workoutRatio.title)\n\n\(workoutRatio.ratio)% of All Workouts"
+                }
+                item.requiresCloseButton = false
+                return BLTNItemManager(rootItem: item)
+            }()
+            boardManager.showBulletin(above: self)
+        }
+        //Exercise Progress Charts for weight lifting and bodyweight training
+        if let exercise = entry.data as? Exercise {
+            guard let exerciseTitle = exercise.title,
+                  let exerciseDate = exercise.workout?.date
+            else { return }
+            
+            //For Weight Lifting BarCharts
+            if exercise.exerciseType == ExerciseConstants.exerciseTypeWeightLifting {
+                
+                var volume = 0.0
+                let sets = SetController.shared.sets.filter{ $0.exercise == exercise }
+                
+                for exerciseSet in sets {
+                    volume += (exerciseSet.weight * Double(exerciseSet.reps))
+                }
+                
+                lazy var boardManager: BLTNItemManager = {
+                    var item = BLTNPageItem(title: exerciseTitle)
+                    if chartTitleLabel.text == exerciseTitle {
+                        let newItem = BLTNPageItem(title: exerciseTitle)
+                        item = newItem
+                        item.descriptionText = "\(exerciseDate.datesFormatForWorkout())\n\nVolume \(volume) lb"
+                    }
+                    item.requiresCloseButton = false
+                    return BLTNItemManager(rootItem: item)
+                }()
+                boardManager.showBulletin(above: self)
+            }
+            //For Bodyweight Training LineCharts
+            if exercise.exerciseType == ExerciseConstants.exerciseTypeBodyWeightTraining {
+                
+                var total = 0
+                let sets = SetController.shared.sets.filter{ $0.exercise == exercise }
+                
+                for exerciseSet in sets {
+                    total += Int(exerciseSet.reps)
+                }
+                
+                lazy var boardManager: BLTNItemManager = {
+                    var item = BLTNPageItem(title: exerciseTitle)
+                    if chartTitleLabel.text == exerciseTitle {
+                        let newItem = BLTNPageItem(title: exerciseTitle)
+                        item = newItem
+                        item.descriptionText = "\(exerciseDate.datesFormatForWorkout())\n\nTotal \(total) reps in \(exercise.exerciseSets?.count ?? 0) sets"
+                    }
+                    item.requiresCloseButton = false
+                    return BLTNItemManager(rootItem: item)
+                }()
+                boardManager.showBulletin(above: self)
+            }
+        }
+        //Exercise Progress Charts for weight lifting and bodyweight training
+        if let exerciseSet = entry.data as? ExerciseSet {
+            guard let exerciseTitle = exerciseSet.exercise?.title,
+                  let workout = exerciseSet.exercise?.workout,
+                  let exerciseDate = workout.date
+            else { return }
+            
+            //For Cardio Scattered Chart
+            
+            lazy var boardManager: BLTNItemManager = {
+                var item = BLTNPageItem(title: exerciseTitle)
+                if chartTitleLabel.text == exerciseTitle {
+                    let newItem = BLTNPageItem(title: exerciseTitle)
+                    item = newItem
+                    item.descriptionText = "\(exerciseDate.datesFormatForWorkout())\n\n\(exerciseSet.distance) miles in \(exerciseSet.duration) mins"
                 }
                 item.requiresCloseButton = false
                 return BLTNItemManager(rootItem: item)

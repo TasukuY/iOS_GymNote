@@ -35,6 +35,11 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="SmX-TG-beq" eventType="touchUpInside" id="2G7-qI-0K7"/>
                                     <segue destination="IIn-hd-bhZ" kind="show" identifier="toImageSetupVC" id="RwM-tY-Frv"/>
@@ -199,6 +204,11 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="t1o-eT-yfn" kind="show" identifier="toAccountConfirmationVC" id="l1l-u6-KFp"/>
                                 </connections>
@@ -271,6 +281,11 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="doneSetupButtonTapped:" destination="t1o-eT-yfn" eventType="touchUpInside" id="BmX-jy-Hrz"/>
                                 </connections>

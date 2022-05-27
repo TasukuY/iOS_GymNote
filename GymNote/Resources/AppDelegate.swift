@@ -26,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: StoryboardConstants.isOnboardedKey)
         }
         
+        //TableViewCell Setup
+        let colorView = UIView()
+        colorView.backgroundColor = .clear
+        UITableViewCell.appearance().selectedBackgroundView = colorView
+        
         return true
     }
 

@@ -33,7 +33,6 @@ class BodyweightTrainingTableViewCell: UITableViewCell {
         delegateSetup()
     }
     
-    
     @IBAction func isCompletedButtonTapped(_ sender: Any) {
         delegate?.isCompletedButtonTapped(sender: self)
     }

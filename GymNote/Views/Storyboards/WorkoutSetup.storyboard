@@ -298,6 +298,11 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="X9l-76-Xap" eventType="touchUpInside" id="2as-WZ-xb2"/>
                                     <segue destination="H0T-CZ-tZh" kind="show" identifier="toSetsVC" id="KDh-vy-a31"/>
@@ -344,6 +349,11 @@
                                 <state key="normal" title="+ Add Set">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addSetButtonTapped:" destination="H0T-CZ-tZh" eventType="touchUpInside" id="top-Mk-pe4"/>
                                 </connections>
@@ -771,7 +781,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VIj-YR-gmI"/>
+        <segue reference="KDh-vy-a31"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square" catalog="system" width="128" height="114"/>

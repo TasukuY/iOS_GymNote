@@ -61,7 +61,6 @@
 		C98FC15D2830A06400FF504A /* UserImageSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC15C2830A06400FF504A /* UserImageSetupViewController.swift */; };
 		C98FC1712830A76D00FF504A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98FC1702830A76D00FF504A /* CloudKit.framework */; };
 		C98FC173283105A100FF504A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC172283105A100FF504A /* AlertManager.swift */; };
-		C98FC1752831ED2B00FF504A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC1742831ED2B00FF504A /* Test.swift */; };
 		C9935F94283A227B00067032 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9935F93283A227B00067032 /* HomeViewController.swift */; };
 		C9D82401283B684000CEB060 /* DatesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D82400283B684000CEB060 /* DatesDetailsViewController.swift */; };
 		C9F603C5282EEAD0003DAE47 /* CoreDataMaanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */; };
@@ -177,7 +176,6 @@
 		C98FC16E2830A76600FF504A /* GymNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GymNote.entitlements; sourceTree = "<group>"; };
 		C98FC1702830A76D00FF504A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		C98FC172283105A100FF504A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
-		C98FC1742831ED2B00FF504A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		C9935F93283A227B00067032 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9D82400283B684000CEB060 /* DatesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesDetailsViewController.swift; sourceTree = "<group>"; };
 		C9F603C4282EEAD0003DAE47 /* CoreDataMaanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMaanger.swift; sourceTree = "<group>"; };
@@ -388,7 +386,6 @@
 			children = (
 				C9F603CB282EF0D7003DAE47 /* StoryboardManager.swift */,
 				C98FC172283105A100FF504A /* AlertManager.swift */,
-				C98FC1742831ED2B00FF504A /* Test.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -790,7 +787,6 @@
 				C91740BD2836D2A2004E6EC2 /* WeightLiftingSetsTableViewCell.swift in Sources */,
 				C921EE4F283517A00064DD7C /* ExerciseTableViewCell.swift in Sources */,
 				C98FC15B28307AA500FF504A /* StringExtension.swift in Sources */,
-				C98FC1752831ED2B00FF504A /* Test.swift in Sources */,
 				C9859E0D283DBC2A00BCEA15 /* SettingViewController.swift in Sources */,
 				C9F603C5282EEAD0003DAE47 /* CoreDataMaanger.swift in Sources */,
 				C921EE4B2834CEA20064DD7C /* ExerciseConstants.swift in Sources */,

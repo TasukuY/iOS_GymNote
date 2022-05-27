@@ -81,6 +81,11 @@
                                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="weightRecordSaveButtonTapped:" destination="0bM-Vo-z7e" eventType="touchUpInside" id="hoR-rb-S1r"/>
                                                 </connections>
@@ -151,6 +156,11 @@
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Add a new Workout"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="addNewWorkoutButtonTapped:" destination="iBE-xf-jHH" eventType="touchUpInside" id="iy9-cP-A8G"/>
                                             <action selector="addNewWorkoutButtonTapped:" destination="0bM-Vo-z7e" eventType="touchUpInside" id="rkx-pB-RTJ"/>
@@ -164,6 +174,11 @@
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Add an existing Workout"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="addExistingWorkoutButtonTapped:" destination="iBE-xf-jHH" eventType="touchUpInside" id="EjI-8A-gbW"/>
                                             <action selector="addExistingWorkoutButtonTapped:" destination="0bM-Vo-z7e" eventType="touchUpInside" id="aIx-7C-zHM"/>
@@ -245,6 +260,11 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Add a new Workout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addNewWorkoutButtonTapped:" destination="iBE-xf-jHH" eventType="touchUpInside" id="czQ-1T-sHs"/>
                                     <segue destination="k0m-ag-p21" kind="show" identifier="toCreateNewWorkoutVCFromCalendarVC" id="g5g-l6-oGQ"/>
@@ -259,6 +279,11 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add an existing Workout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addExistingWorkoutButtonTapped:" destination="iBE-xf-jHH" eventType="touchUpInside" id="FvW-k1-RJ0"/>
                                     <segue destination="YkD-BD-g5T" kind="show" identifier="toExerciseListVCFromCalendarVCToSetUPExistingWorkout" id="SwP-t9-0Mv"/>
@@ -367,19 +392,41 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OFj-Rc-4Ny">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="W8C-UX-3qR">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bxl-Db-NgQ">
-                                <rect key="frame" x="285" y="5" width="50" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="chart.xyaxis.line" catalog="system" title="">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="exerciseProgressButtonTapped:" destination="bh2-Jk-M18" eventType="touchUpInside" id="fOP-vL-dH7"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem style="plain" id="5lc-mh-UhG">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="y0H-7t-pYf">
+                                    <rect key="frame" x="20" y="5" width="44" height="34"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="weightLifting" title=""/>
+                                    <connections>
+                                        <action selector="exerciseProgressButtonTapped:" destination="bh2-Jk-M18" eventType="touchUpInside" id="WRM-Fa-kHR"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="04l-Ab-McG">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YzF-93-Jlq">
+                                    <rect key="frame" x="72" y="5" width="44" height="34"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="cardio"/>
+                                    <connections>
+                                        <action selector="cardioProgressButtonTapped:" destination="bh2-Jk-M18" eventType="touchUpInside" id="stb-aD-8j8"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="WjA-Zd-sJy">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4DZ-wc-yUR">
+                                    <rect key="frame" x="124" y="5" width="44" height="34"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="bodyweight"/>
+                                    <connections>
+                                        <action selector="bodyweightTrainingProgressButtonTapped:" destination="bh2-Jk-M18" eventType="touchUpInside" id="lFQ-iE-r98"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Jyu-PK-5K8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zuX-Is-7Dl">
                                 <rect key="frame" x="343" y="5" width="51" height="34"/>
@@ -395,9 +442,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bodyweightTrainingProgressButton" destination="4DZ-wc-yUR" id="FJw-n0-R0d"/>
+                        <outlet property="cardioProgressButton" destination="YzF-93-Jlq" id="FZR-Jd-OCu"/>
                         <outlet property="chartTitleLabel" destination="0Ik-0g-b2q" id="N2J-X9-LwO"/>
-                        <outlet property="exerciseProgressButton" destination="Bxl-Db-NgQ" id="91c-9u-995"/>
                         <outlet property="menuButton" destination="zuX-Is-7Dl" id="3PK-Ec-cAA"/>
+                        <outlet property="weightLiftingProgressButton" destination="y0H-7t-pYf" id="KFz-PP-7UC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abx-P1-FKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -611,6 +660,11 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="k0m-ag-p21" eventType="touchUpInside" id="vrm-ON-DmF"/>
                                     <segue destination="YkD-BD-g5T" kind="show" identifier="toExerciseListVC" id="Wk9-ZK-scs"/>
@@ -708,6 +762,11 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Add an existing Exercise"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addExistingExerciseButtonTapped:" destination="YkD-BD-g5T" eventType="touchUpInside" id="l4Q-tB-tCr"/>
                                 </connections>
@@ -718,6 +777,11 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Finsh the Workout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="finishTheWorkoutButtonTapped:" destination="YkD-BD-g5T" eventType="touchUpInside" id="mzf-be-YAL"/>
                                 </connections>
@@ -728,6 +792,11 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Start the Workout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startTheWorkoutButtonTapped:" destination="YkD-BD-g5T" eventType="touchUpInside" id="5mc-AX-a2C"/>
                                 </connections>
@@ -858,6 +927,11 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="zAd-yx-0yO" eventType="touchUpInside" id="z0P-iZ-Voz"/>
                                     <segue destination="cHu-tz-7gt" kind="show" identifier="toSetsVC" id="toQ-Ea-6eQ"/>
@@ -904,6 +978,11 @@
                                 <state key="normal" title="+ Add Set">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addSetButtonTapped:" destination="cHu-tz-7gt" eventType="touchUpInside" id="oyQ-yt-9HZ"/>
                                 </connections>
@@ -1364,14 +1443,16 @@
         <segue reference="g5g-l6-oGQ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bodyweight" width="20" height="20"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="cardio" width="20" height="20"/>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
-        <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square" catalog="system" width="128" height="114"/>
+        <image name="weightLifting" width="20" height="20"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
